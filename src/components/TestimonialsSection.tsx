@@ -19,7 +19,7 @@ const testimonials = [
     initials: "PG",
     name: "Pedro González",
     role: "La Terraza SD",
-    color: "bg-info",
+    color: "bg-primary/70",
     quote: "Los NCF se generan solos, los comprobantes salen correctos y el contador está feliz.",
   },
 ];
@@ -28,8 +28,8 @@ export default function TestimonialsSection() {
   const ref = useScrollReveal();
 
   return (
-    <section id="testimonios" className="py-20 md:py-28" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="testimonios" className="py-20 md:py-28 bg-secondary" ref={ref}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Clientes</span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-foreground">
@@ -39,7 +39,7 @@ export default function TestimonialsSection() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {testimonials.map((t) => (
-            <div key={t.initials} className="bg-card border border-border rounded-lg p-6 hover-lift">
+            <div key={t.initials} className="bg-background border border-border rounded-lg p-6 hover-lift">
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <span key={i} className="text-primary text-sm">★</span>

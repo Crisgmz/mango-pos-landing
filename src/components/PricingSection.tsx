@@ -4,7 +4,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 const plans = [
   {
     name: "Básico",
-    price: "$25",
+    price: "$49.99",
     period: "/mes",
     desc: "1 caja",
     popular: false,
@@ -12,7 +12,7 @@ const plans = [
   },
   {
     name: "Profesional",
-    price: "$55",
+    price: "$74.99",
     period: "/mes",
     desc: "3 cajas",
     popular: true,
@@ -20,8 +20,8 @@ const plans = [
   },
   {
     name: "Empresarial",
-    price: "Custom",
-    period: "",
+    price: "$99.99",
+    period: "/mes",
     desc: "Ilimitado",
     popular: false,
     features: ["Todo en Profesional", "Multi-sucursal", "API", "Subdominio", "Soporte dedicado"],
@@ -32,14 +32,14 @@ export default function PricingSection() {
   const ref = useScrollReveal();
 
   return (
-    <section id="precios" className="bg-foreground py-20 md:py-28" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="precios" className="py-20 md:py-28 bg-background" ref={ref}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Planes y precios</span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-background">
+          <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-foreground">
             Empieza gratis, crece con Mango
           </h2>
-          <p className="mt-3 text-sm font-body text-background/60">
+          <p className="mt-3 text-sm font-body text-muted-foreground">
             14 días gratis en cualquier plan. Sin tarjeta de crédito.
           </p>
         </div>
@@ -48,10 +48,10 @@ export default function PricingSection() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`rounded-lg p-6 flex flex-col ${
+              className={`rounded-lg p-6 flex flex-col border ${
                 plan.popular
-                  ? "bg-primary text-primary-foreground ring-2 ring-primary"
-                  : "bg-background/[0.06] border border-background/10 text-background"
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border bg-background text-foreground"
               }`}
             >
               {plan.popular && (
@@ -64,7 +64,7 @@ export default function PricingSection() {
                 <span className="text-3xl font-heading font-bold">{plan.price}</span>
                 <span className="text-sm font-body opacity-70">{plan.period}</span>
               </div>
-              <p className={`text-xs font-body mt-1 ${plan.popular ? "text-primary-foreground/70" : "opacity-50"}`}>
+              <p className={`text-xs font-body mt-1 ${plan.popular ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
                 {plan.desc}
               </p>
 
@@ -84,7 +84,7 @@ export default function PricingSection() {
                     : "bg-primary text-primary-foreground hover:bg-primary/90"
                 }`}
               >
-                {plan.price === "Custom" ? "Contactar ventas" : "Empieza gratis"}
+                Empieza gratis
               </Button>
             </div>
           ))}
