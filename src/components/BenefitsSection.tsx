@@ -13,8 +13,8 @@ export default function BenefitsSection() {
   const ref = useScrollReveal();
 
   return (
-    <section className="bg-muted py-20 md:py-28" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 md:py-28 bg-secondary" ref={ref}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Por qué Mango</span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-foreground">
@@ -29,7 +29,7 @@ export default function BenefitsSection() {
               className={`relative rounded-lg p-6 hover-lift overflow-hidden ${
                 b.featured
                   ? "bg-primary text-primary-foreground"
-                  : "bg-card border border-border"
+                  : "bg-background border border-border"
               }`}
             >
               <span

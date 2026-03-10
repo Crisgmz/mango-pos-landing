@@ -5,7 +5,7 @@ export default function FinalCTA() {
   const ref = useScrollReveal();
 
   return (
-    <section className="bg-secondary py-20 md:py-28" ref={ref}>
+    <section className="py-20 md:py-28 bg-secondary" ref={ref}>
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-body font-medium mb-6">
           🥭 Sin tarjeta de crédito requerida

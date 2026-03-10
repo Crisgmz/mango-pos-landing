@@ -7,9 +7,8 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer className="bg-foreground text-background/80 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
               <span className="w-7 h-7 bg-primary rounded-md flex items-center justify-center text-sm">🥭</span>

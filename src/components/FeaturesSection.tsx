@@ -29,7 +29,7 @@ function FeatureCard({ emoji, title, items }: { emoji: string; title: string; it
 
   return (
     <div
-      className="bg-card border border-border rounded-lg p-5 hover-lift cursor-pointer"
+      className="bg-background border border-border rounded-lg p-5 hover-lift cursor-pointer"
       onClick={() => setOpen(!open)}
     >
       <div className="flex items-start justify-between">
@@ -47,9 +47,7 @@ function FeatureCard({ emoji, title, items }: { emoji: string; title: string; it
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
       </div>
-      <div
-        className={`overflow-hidden transition-all duration-300 ${open ? "max-h-96 mt-4" : "max-h-0"}`}
-      >
+      <div className={`overflow-hidden transition-all duration-300 ${open ? "max-h-96 mt-4" : "max-h-0"}`}>
         <ul className="space-y-2">
           {items.map((item) => (
             <li key={item} className="text-sm text-muted-foreground font-body flex items-start gap-2">
@@ -67,8 +65,8 @@ export default function FeaturesSection() {
   const ref = useScrollReveal();
 
   return (
-    <section id="funciones" className="py-20 md:py-28" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="caracteristicas" className="py-20 md:py-28" ref={ref}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
           <div>
             <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Funcionalidades</span>
