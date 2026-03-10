@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import heroPoster from "../../assets/FireShot Capture 023 - MangoPOS - [sistematest.mangopos.do].png";
+import heroVideo from "../../assets/4524440-uhd_3840_2160_25fps.mov";
 
 const mesas = [
   { name: "Mesa 1", status: "Ocupada" },
@@ -28,10 +30,27 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="pt-24 pb-16 md:pt-32 md:pb-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative isolate overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24">
+      <div className="absolute inset-0 -z-20">
+        <video
+          autoPlay
+          className="h-full w-full object-cover"
+          loop
+          muted
+          playsInline
+          poster={heroPoster}
+          preload="metadata"
+        >
+          <source src={heroVideo} type="video/quicktime" />
+        </video>
+      </div>
+
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-background via-background/72 to-background/55" />
+      <div className="absolute inset-y-0 left-0 -z-10 w-full bg-[radial-gradient(circle_at_top_left,hsl(var(--background))_0%,hsl(var(--background)/0.88)_32%,transparent_68%)]" />
+
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className={`space-y-6 ${visible ? "animate-fade-up" : "opacity-0"}`}>
+          <div className={`space-y-6 rounded-2xl border border-border/60 bg-background/72 p-6 shadow-lg backdrop-blur-sm sm:p-8 ${visible ? "animate-fade-up" : "opacity-0"}`}>
             <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-body font-medium">
               Sistema POS para restaurantes en RD
             </span>
