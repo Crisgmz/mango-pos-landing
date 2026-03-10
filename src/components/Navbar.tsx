@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
+import mangoLogo from "../../Artboard 1logo.png";
 
 const caracteristicasData = [
   {
@@ -121,14 +122,17 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <a
             href="#"
-            className="flex items-center gap-2"
+            className="flex items-center"
             onClick={(e) => {
               e.preventDefault();
               scrollTo("#");
             }}
           >
-            <span className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-lg">🥭</span>
-            <span className="font-heading font-bold text-lg text-foreground">Mango POS</span>
+            <img
+              alt="Mango POS"
+              className="h-10 w-auto object-contain sm:h-11"
+              src={mangoLogo}
+            />
           </a>
 
           {/* Desktop nav */}
