@@ -109,7 +109,13 @@ export default function HeroSection() {
                 <span className="w-2.5 h-2.5 rounded-full bg-destructive/40" />
                 <span className="w-2.5 h-2.5 rounded-full bg-primary/40" />
                 <span className="w-2.5 h-2.5 rounded-full bg-success/40" />
-                <span className="ml-2 text-xs text-muted-foreground font-body">Dashboard — Mango POS</span>
+                <div className="ml-2 flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-md bg-primary/10 text-sm leading-none">
+                    🥭
+                  </span>
+                  <span className="text-xs font-heading font-bold tracking-[0.22em] text-primary">MANGO</span>
+                  <span className="text-xs font-heading font-bold tracking-[0.22em] text-success">POS</span>
+                </div>
               </div>
 
               <div className="p-5 space-y-4">
