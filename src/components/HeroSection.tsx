@@ -30,7 +30,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative isolate overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24">
-      <div className="absolute inset-0 -z-20">
+      <div className="pointer-events-none absolute inset-0 z-0">
         <video
           autoPlay
           className="h-full w-full object-cover"
@@ -38,15 +38,14 @@ export default function HeroSection() {
           muted
           playsInline
           preload="metadata"
-        >
-          <source src={heroVideo} type="video/quicktime" />
-        </video>
+          src={heroVideo}
+        />
       </div>
 
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,hsl(var(--background)/0.94)_0%,hsl(var(--background)/0.78)_35%,hsl(var(--background)/0.34)_68%,hsl(var(--background)/0.18)_100%)]" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,hsl(var(--background)/0.95)_0%,transparent_58%)]" />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(90deg,hsl(var(--background)/0.94)_0%,hsl(var(--background)/0.78)_35%,hsl(var(--background)/0.34)_68%,hsl(var(--background)/0.18)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_top_left,hsl(var(--background)/0.95)_0%,transparent_58%)]" />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className={`space-y-6 ${visible ? "animate-fade-up" : "opacity-0"}`}>
             <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-body font-medium">
