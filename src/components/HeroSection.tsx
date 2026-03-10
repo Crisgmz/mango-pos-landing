@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import heroVideo from "../../assets/4524440-uhd_3840_2160_25fps.mov";
+import mangoLogo from "../../Artboard 1logo.png";
 
 const mesas = [
   { name: "Mesa 1", status: "Ocupada" },
@@ -109,13 +110,11 @@ export default function HeroSection() {
                 <span className="w-2.5 h-2.5 rounded-full bg-destructive/40" />
                 <span className="w-2.5 h-2.5 rounded-full bg-primary/40" />
                 <span className="w-2.5 h-2.5 rounded-full bg-success/40" />
-                <div className="ml-2 flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-md bg-primary/10 text-sm leading-none">
-                    🥭
-                  </span>
-                  <span className="text-xs font-heading font-bold tracking-[0.22em] text-primary">MANGO</span>
-                  <span className="text-xs font-heading font-bold tracking-[0.22em] text-success">POS</span>
-                </div>
+                <img
+                  alt="Mango POS"
+                  className="ml-2 h-8 w-auto object-contain"
+                  src={mangoLogo}
+                />
               </div>
 
               <div className="p-5 space-y-4">
