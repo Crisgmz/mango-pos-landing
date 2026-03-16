@@ -1,4 +1,5 @@
 export type Plan = {
+  id: string;
   name: string;
   audience: string;
   copy: string;
@@ -24,6 +25,7 @@ export type ComparisonSection = {
 
 export const plans: Plan[] = [
   {
+    id: "base",
     name: "Base",
     audience: "Ideal para negocios que quieren comenzar a operar con orden y velocidad.",
     copy: "Todo lo esencial para vender, cobrar y operar tu restaurante en un solo lugar.",
@@ -57,6 +59,7 @@ export const plans: Plan[] = [
     ],
   },
   {
+    id: "pro",
     name: "Pro",
     audience: "Ideal para negocios que necesitan más control operativo y administración.",
     copy: "Más control, más orden y más capacidad para crecer sin complicar la operación.",
@@ -88,6 +91,7 @@ export const plans: Plan[] = [
     ],
   },
   {
+    id: "enterprise",
     name: "Enterprise",
     audience: "Ideal para marcas, cadenas o negocios que quieren una operación robusta y escalable.",
     copy: "La versión más completa de MangoPOS para operaciones que necesitan control, escalabilidad y acompañamiento cercano.",

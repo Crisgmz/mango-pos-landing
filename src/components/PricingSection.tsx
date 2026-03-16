@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { comparisonSections, faqItems, plans } from "@/content/pricing";
+import { appUrl } from "@/content/site";
 
 type PricingSectionProps = {
   mode?: "summary" | "full";
@@ -12,6 +13,7 @@ type PricingSectionProps = {
 export default function PricingSection({ mode = "summary" }: PricingSectionProps) {
   const ref = useScrollReveal();
   const isFull = mode === "full";
+  const getRegisterUrl = (planId: string) => `${appUrl.replace(/\/login$/, "")}/register?plan=${planId}`;
   const renderComparisonValue = (value: boolean | string) => {
     if (typeof value === "boolean") {
       return (
@@ -88,13 +90,16 @@ export default function PricingSection({ mode = "summary" }: PricingSectionProps
 
               {isFull ? (
                 <Button
+                  asChild
                   className={`mt-6 w-full ${
                     plan.popular
                       ? "bg-background text-foreground hover:bg-background/90"
                       : "bg-primary text-primary-foreground hover:bg-primary/90"
                   }`}
                 >
-                  {plan.ctaLabel ?? "Solicitar asesoría"}
+                  <a href={getRegisterUrl(plan.id)} rel="noreferrer" target="_blank">
+                    {plan.ctaLabel ?? "Solicitar asesoría"}
+                  </a>
                 </Button>
               ) : (
                 <Button
@@ -105,7 +110,7 @@ export default function PricingSection({ mode = "summary" }: PricingSectionProps
                       : "bg-primary text-primary-foreground hover:bg-primary/90"
                   }`}
                 >
-                  <Link to="/precios">Ver detalle</Link>
+                  <a href={getRegisterUrl(plan.id)} rel="noreferrer" target="_blank">14 Días Gratis</a>
                 </Button>
               )}
             </div>
