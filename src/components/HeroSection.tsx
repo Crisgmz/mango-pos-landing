@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import heroVideo from "../../assets/4524440-uhd_3840_2160_25fps.mov";
+import heroPreview from "../../assets/FireShot Capture 023 - MangoPOS - [sistematest.mangopos.do].png";
 import mangoLogo from "../../Artboard 1logo.png";
-import { primaryLinks } from "@/content/site";
+import { appUrl, primaryLinks } from "@/content/site";
 
 const mesas = [
   { name: "Mesa 1", status: "Ocupada" },
@@ -29,19 +29,16 @@ export default function HeroSection() {
   return (
     <section className="relative isolate overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24">
       <div className="pointer-events-none absolute inset-0 z-0">
-        <video
-          autoPlay
-          className="h-full w-full object-cover"
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          src={heroVideo}
+        <img
+          alt="Vista previa de Mango POS"
+          className="h-full w-full object-cover object-top"
+          loading="eager"
+          src={heroPreview}
         />
       </div>
 
-      <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(90deg,hsl(var(--background)/0.94)_0%,hsl(var(--background)/0.78)_35%,hsl(var(--background)/0.34)_68%,hsl(var(--background)/0.18)_100%)]" />
-      <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_top_left,hsl(var(--background)/0.95)_0%,transparent_58%)]" />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(90deg,hsl(var(--background)/0.96)_0%,hsl(var(--background)/0.84)_36%,hsl(var(--background)/0.46)_70%,hsl(var(--background)/0.26)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_top_left,hsl(var(--background)/0.97)_0%,transparent_58%)]" />
 
       <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -51,41 +48,28 @@ export default function HeroSection() {
             </span>
 
             <h1 className="text-4xl sm:text-5xl font-heading font-bold leading-[1.1] text-foreground tracking-tight">
-              El POS que tu restaurante necesitaba{" "}
-              <span className="text-primary">desde siempre</span>
+              Cobra más rápido, organiza cocina y controla tu operación con{" "}
+              <span className="text-primary">Mango POS</span>
             </h1>
 
             <p className="text-base text-muted-foreground max-w-lg leading-relaxed">
-              Gestiona mesas, cocina, inventario, facturación fiscal y reportes desde un solo lugar. Rápido, sencillo y listo para la DGII.
+              Un sistema POS pensado para restaurantes en República Dominicana: mesas, comandas, cocina, inventario, caja, reportes y operación lista para la DGII.
             </p>
+
+            <div className="grid gap-2 text-sm font-body text-muted-foreground sm:grid-cols-2 max-w-xl">
+              <div className="rounded-lg border border-border bg-background/70 px-3 py-2">Implementación guiada según tu operación</div>
+              <div className="rounded-lg border border-border bg-background/70 px-3 py-2">Cobros, NCF y control operativo en un solo lugar</div>
+            </div>
 
             <div className="flex flex-wrap gap-3">
               <Button asChild size="lg">
-                <Link to={primaryLinks.pricing}>Ver planes y precios</Link>
+                <a href={appUrl} rel="noreferrer" target="_blank">Ver demo del sistema</a>
               </Button>
               <Button asChild variant="ghost" size="lg">
-                <Link to={primaryLinks.features}>Ver funciones</Link>
+                <Link to={primaryLinks.pricing}>Ver planes y precios</Link>
               </Button>
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
-              <div className="flex -space-x-2">
-                {["JR", "MA", "PG", "LC"].map((initials, i) => {
-                  const colors = ["bg-primary", "bg-success", "bg-primary/70", "bg-success/70"];
-                  return (
-                    <span
-                      key={initials}
-                      className={`w-8 h-8 rounded-full ${colors[i]} flex items-center justify-center text-xs font-heading font-bold text-primary-foreground border-2 border-background`}
-                    >
-                      {initials}
-                    </span>
-                  );
-                })}
-              </div>
-              <p className="text-sm text-muted-foreground">
-                <span className="font-semibold text-foreground">+200</span> restaurantes ya usan Mango POS
-              </p>
-            </div>
           </div>
 
           <div className={`relative ${visible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: "0.15s" }}>

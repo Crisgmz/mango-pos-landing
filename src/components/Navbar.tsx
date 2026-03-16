@@ -129,9 +129,11 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-3">
             <Button asChild variant="ghost" size="sm">
-              <a href={appUrl} rel="noreferrer" target="_blank">Iniciar sesión</a>
+              <a href={appUrl} rel="noreferrer" target="_blank">Ya soy cliente</a>
             </Button>
-            <Button size="sm" onClick={() => scrollTo(primaryLinks.pricing)}>Prueba gratis</Button>
+            <Button asChild size="sm">
+              <a href={appUrl} rel="noreferrer" target="_blank">Ver demo</a>
+            </Button>
           </div>
 
           <button
@@ -273,9 +275,11 @@ export default function Navbar() {
 
           <div className="mt-4 flex flex-col gap-2">
             <Button asChild variant="ghost" className="w-full">
-              <a href={appUrl} rel="noreferrer" target="_blank">Iniciar sesión</a>
+              <a href={appUrl} rel="noreferrer" target="_blank">Ya soy cliente</a>
             </Button>
-            <Button className="w-full" onClick={() => scrollTo(primaryLinks.pricing)}>Prueba gratis</Button>
+            <Button asChild className="w-full">
+              <a href={appUrl} rel="noreferrer" target="_blank">Ver demo</a>
+            </Button>
           </div>
         </div>
       )}
