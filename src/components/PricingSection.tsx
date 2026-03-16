@@ -1,7 +1,9 @@
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { comparisonRows, featureGroups, plans } from "@/content/pricing";
+import { comparisonSections, faqItems, plans } from "@/content/pricing";
 
 type PricingSectionProps = {
   mode?: "summary" | "full";
@@ -10,6 +12,17 @@ type PricingSectionProps = {
 export default function PricingSection({ mode = "summary" }: PricingSectionProps) {
   const ref = useScrollReveal();
   const isFull = mode === "full";
+  const renderComparisonValue = (value: boolean | string) => {
+    if (typeof value === "boolean") {
+      return (
+        <span className={`text-2xl font-semibold ${value ? "text-success" : "text-muted-foreground/60"}`}>
+          {value ? "✓" : "−"}
+        </span>
+      );
+    }
+
+    return <span className="text-sm font-body text-muted-foreground">{value}</span>;
+  };
 
   return (
     <section id="precios" className="py-20 md:py-28 bg-background" ref={ref}>
@@ -109,74 +122,80 @@ export default function PricingSection({ mode = "summary" }: PricingSectionProps
 
         {isFull && (
           <>
-            <div className="mt-16 rounded-2xl border border-border bg-secondary/40 p-6 sm:p-8">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Comparativa rápida</span>
-                  <h3 className="mt-2 text-2xl font-heading font-bold text-foreground">
-                    Qué cambia entre Base, Pro y Enterprise
-                  </h3>
-                </div>
-                <p className="text-sm font-body text-muted-foreground max-w-xl leading-relaxed">
-                  Así separas con claridad lo que ya viene incluido, lo que funciona como upgrade y lo que entra como propuesta premium o empresarial.
+            <div className="mt-16 rounded-2xl border border-border bg-background overflow-hidden">
+              <div className="border-b border-border px-6 py-6 sm:px-8">
+                <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Comparativa de features</span>
+                <h3 className="mt-2 text-2xl font-heading font-bold text-foreground">
+                  Compara qué incluye cada plan
+                </h3>
+                <p className="mt-3 text-sm font-body text-muted-foreground max-w-3xl leading-relaxed">
+                  Mantenemos las tarjetas arriba para la decisión rápida, y aquí debajo dejamos la comparativa más detallada para quienes sí quieren revisar alcance antes de elegir.
                 </p>
               </div>
 
-              <div className="mt-8 overflow-x-auto">
-                <table className="w-full min-w-[720px] border-separate border-spacing-0">
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[840px] border-separate border-spacing-0">
                   <thead>
                     <tr>
-                      <th className="px-4 py-3 text-left text-xs font-body font-medium text-muted-foreground">Módulo</th>
-                      <th className="px-4 py-3 text-left text-xs font-body font-medium text-muted-foreground">Base</th>
-                      <th className="px-4 py-3 text-left text-xs font-body font-medium text-muted-foreground">Pro</th>
-                      <th className="px-4 py-3 text-left text-xs font-body font-medium text-muted-foreground">Enterprise</th>
+                      <th className="px-6 py-4 text-left text-xs font-body font-medium text-muted-foreground">Feature</th>
+                      <th className="px-6 py-4 text-center text-xs font-body font-medium text-muted-foreground">Base</th>
+                      <th className="border-x-4 border-primary/80 px-6 py-4 text-center text-xs font-body font-medium text-muted-foreground">Pro</th>
+                      <th className="px-6 py-4 text-center text-xs font-body font-medium text-muted-foreground">Enterprise</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {comparisonRows.map((row) => (
-                      <tr key={row.label}>
-                        <td className="border-t border-border px-4 py-3 text-sm font-body text-foreground">{row.label}</td>
-                        {row.values.map((value) => (
-                          <td
-                            key={`${row.label}-${value}`}
-                            className="border-t border-border px-4 py-3 text-sm font-body text-muted-foreground"
-                          >
-                            {value}
+                    {comparisonSections.map((section) => (
+                      <Fragment key={section.title}>
+                        <tr key={`${section.title}-header`}>
+                          <td colSpan={4} className="bg-secondary px-6 py-4 text-left text-sm font-heading font-bold uppercase tracking-wide text-foreground">
+                            {section.title}
                           </td>
+                        </tr>
+                        {section.rows.map((row) => (
+                          <tr key={`${section.title}-${row.label}`}>
+                            <td className="border-t border-border px-6 py-5 text-sm font-body text-foreground">{row.label}</td>
+                            {row.values.map((value, valueIndex) => (
+                              <td
+                                key={`${section.title}-${row.label}-${valueIndex}`}
+                                className={`border-t border-border px-6 py-5 text-center ${
+                                  valueIndex === 1 ? "border-x-4 border-primary/80" : ""
+                                }`}
+                              >
+                                {renderComparisonValue(value)}
+                              </td>
+                            ))}
+                          </tr>
                         ))}
-                      </tr>
+                      </Fragment>
                     ))}
                   </tbody>
                 </table>
               </div>
             </div>
 
-            <div className="mt-12 rounded-2xl border border-border bg-background p-6 sm:p-8">
-              <div className="max-w-3xl">
-                <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Características del sistema</span>
-                <h3 className="mt-2 text-2xl font-heading font-bold text-foreground">
-                  Todo lo que ya puede vender MangoPOS en la landing
+            <div className="mt-16 max-w-5xl mx-auto">
+              <div className="text-center">
+                <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Preguntas frecuentes</span>
+                <h3 className="mt-2 text-3xl sm:text-4xl font-heading font-bold text-foreground">
+                  Respuestas claras antes de salir a producción
                 </h3>
-                <p className="mt-3 text-sm font-body text-muted-foreground leading-relaxed">
-                  Aquí concentramos las funcionalidades reales del sistema en bloques comerciales fáciles de entender, tomando como base los módulos que ya existen y los que están preparados para crecer.
+                <p className="mt-3 text-sm font-body text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                  Aquí respondemos las preguntas que más pesan cuando un negocio ya está por decidirse: activación, soporte, cambios de plan y cómo funciona Enterprise.
                 </p>
               </div>
 
-              <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                {featureGroups.map((group) => (
-                  <div key={group.title} className="rounded-xl border border-border bg-secondary/30 p-5">
-                    <h4 className="font-heading font-bold text-base text-foreground">{group.title}</h4>
-                    <ul className="mt-4 space-y-2">
-                      {group.items.map((item) => (
-                        <li key={item} className="text-sm font-body text-muted-foreground flex items-start gap-2">
-                          <span className="mt-0.5 text-primary">•</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+              <Accordion className="mt-10" collapsible defaultValue="faq-0" type="single">
+                {faqItems.map((item, index) => (
+                  <AccordionItem key={item.question} value={`faq-${index}`} className="border-border">
+                    <AccordionTrigger className="py-6 text-left text-xl font-heading font-bold text-foreground hover:no-underline">
+                      {item.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-6 text-base font-body leading-relaxed text-muted-foreground">
+                      {item.answer}
+                    </AccordionContent>
+                  </AccordionItem>
                 ))}
-              </div>
+              </Accordion>
             </div>
           </>
         )}

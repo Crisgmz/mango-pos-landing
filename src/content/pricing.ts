@@ -12,6 +12,16 @@ export type Plan = {
   details: string[];
 };
 
+export type ComparisonValue = boolean | string;
+
+export type ComparisonSection = {
+  title: string;
+  rows: {
+    label: string;
+    values: [ComparisonValue, ComparisonValue, ComparisonValue];
+  }[];
+};
+
 export const plans: Plan[] = [
   {
     name: "Base",
@@ -107,114 +117,71 @@ export const plans: Plan[] = [
   },
 ];
 
-export const comparisonRows = [
-  { label: "Ventas, mesas y zonas", values: ["Incluido", "Incluido", "Incluido"] },
-  { label: "Caja y métodos de pago", values: ["Incluido", "Incluido", "Incluido"] },
-  { label: "Comandas y KDS", values: ["Incluido", "Incluido", "Incluido"] },
-  { label: "Productos, categorías y menús", values: ["Incluido", "Incluido", "Incluido"] },
-  { label: "Modificadores y notas", values: ["Incluido", "Incluido", "Incluido"] },
-  { label: "Usuarios y roles", values: ["Base", "Avanzado", "Avanzado"] },
-  { label: "Recetas", values: ["No", "Incluido", "Incluido"] },
-  { label: "Clientes", values: ["Base", "Incluido", "Incluido"] },
-  { label: "Impresión por áreas", values: ["Base", "Incluido", "Incluido"] },
-  { label: "Multi-sucursal", values: ["No", "No", "Incluido"] },
-  { label: "Implementación acompañada", values: ["No", "Incluido", "Incluido"] },
-  { label: "Soporte", values: ["Base", "Prioritario", "Premium"] },
-];
-
-export const featureGroups = [
+export const comparisonSections: ComparisonSection[] = [
   {
-    title: "Ventas y operación POS",
-    items: [
-      "Venta por zonas y mesas",
-      "Venta rápida para pedidos express",
-      "Venta manual",
-      "Base para delivery y self service",
-      "Selección visual de mesas por zona",
-      "Estados de mesa y apertura de orden",
-      "Carrito con cálculos automáticos",
-      "Búsqueda, filtros y catálogo visual de productos",
-      "Modificadores, notas y ajuste de cantidades",
-      "Precuenta, subcuentas y división de cuenta",
-      "Cobro directo desde la orden",
+    title: "Operación y ventas",
+    rows: [
+      { label: "Venta por mesas y zonas", values: [true, true, true] },
+      { label: "Venta rápida y venta manual", values: [true, true, true] },
+      { label: "Modificadores y notas por producto", values: [true, true, true] },
+      { label: "Precuenta y división de cuenta", values: [true, true, true] },
+      { label: "Comandas a cocina", values: [true, true, true] },
+      { label: "KDS de cocina", values: [true, true, true] },
     ],
   },
   {
-    title: "Pagos y caja",
-    items: [
-      "Pago en efectivo, tarjeta, transferencia y QR",
-      "Cálculo de vuelto",
-      "Apertura y cierre de caja",
-      "Arqueo o cierre a ciegas",
-      "Registro de ingresos y egresos",
-      "Historial operativo de caja",
-      "Resumen de sesión y movimientos de efectivo",
+    title: "Caja y productos",
+    rows: [
+      { label: "Cobros en efectivo, tarjeta, transferencia y QR", values: [true, true, true] },
+      { label: "Apertura, cierre, ingresos y egresos de caja", values: [true, true, true] },
+      { label: "Productos, categorías y menús", values: [true, true, true] },
+      { label: "Impuestos", values: [true, true, true] },
+      { label: "Clientes", values: [false, true, true] },
+      { label: "Recetas", values: [false, true, true] },
     ],
   },
   {
-    title: "Cocina, salón y comandas",
-    items: [
-      "Envío de pedidos a cocina",
-      "Vista KDS para cocina",
-      "Estados de preparación en tiempo real",
-      "Control visual de productos agotados",
-      "Gestión de zonas y mesas",
-      "Control de ocupación por mesa",
-      "Reapertura de órdenes activas",
-      "Flujo orientado a salón, terraza y áreas VIP",
-    ],
-  },
-  {
-    title: "Productos, menú y clientes",
-    items: [
-      "Gestión de productos, categorías y menús",
-      "Modificadores e impuestos por producto o menú",
-      "Productos activos e inactivos",
-      "Recetas",
-      "Base para combos, insumos y costeo",
-      "Registro y búsqueda de clientes",
-      "Base para historial de compras, fidelización y beneficios",
-    ],
-  },
-  {
-    title: "Usuarios, roles e impresión",
-    items: [
-      "Login con usuario y clave",
-      "Gestión de empleados",
-      "Roles y permisos por módulo",
-      "Overrides por usuario",
-      "Control de acceso por negocio",
-      "Configuración de impresoras",
-      "Impresión térmica, recibos, precuentas y comandas",
-      "Impresión distribuida por áreas",
-    ],
-  },
-  {
-    title: "Configuración, fiscal y expansión",
-    items: [
-      "Configuración de impuestos, cajas, zonas y mesas",
-      "Configuración de menús, recetas e impresión",
-      "Configuración comercial del negocio",
-      "Base para NCF y e-CF",
-      "Base para reportes operativos",
-      "Base para compras e inventario",
-      "Base para promociones, cupones y gift cards",
-      "Base para multi-sucursal",
+    title: "Control y escalabilidad",
+    rows: [
+      { label: "Usuarios y roles base", values: [true, true, true] },
+      { label: "Permisos avanzados por usuario", values: [false, true, true] },
+      { label: "Impresión por áreas", values: [false, true, true] },
+      { label: "Implementación acompañada", values: [false, true, true] },
+      { label: "Multi-sucursal", values: [false, false, true] },
+      { label: "Integraciones o adaptaciones a medida", values: [false, false, true] },
     ],
   },
 ];
 
-export const addOns = [
-  "Multi-sucursal",
-  "Usuarios adicionales",
-  "Soporte premium",
-  "Implementación y capacitación",
-  "Impresión avanzada",
-  "Reportes avanzados",
-  "Inventario y compras",
-  "Fidelización",
-  "Promociones y cupones",
-  "Gift cards",
-  "Crédito a clientes",
-  "Integraciones especiales",
+export const faqItems = [
+  {
+    question: "¿Cómo funciona la activación de MangoPOS?",
+    answer:
+      "Te ayudamos a configurar el negocio, definir cajas, zonas, mesas e impresión antes de salir a operación. En Pro y Enterprise el acompañamiento es más cercano y puede incluir implementación guiada.",
+  },
+  {
+    question: "¿Puedo cambiar de plan más adelante?",
+    answer:
+      "Sí. Puedes comenzar con Base y pasar a Pro o Enterprise cuando necesites más control operativo, más usuarios, multi-sucursal o una implementación más consultiva.",
+  },
+  {
+    question: "¿El plan Enterprise tiene precio fijo?",
+    answer:
+      "No. Enterprise se cotiza a medida porque depende del alcance: cantidad de sucursales, usuarios, acompañamiento de implementación, integraciones y módulos avanzados que se activen.",
+  },
+  {
+    question: "¿MangoPOS sirve solo para restaurantes?",
+    answer:
+      "Está pensado para restaurantes y negocios de comida como cafeterías, bares, food trucks y operaciones con servicio en salón, mostrador o cocina con comandas.",
+  },
+  {
+    question: "¿Incluyen soporte e implementación?",
+    answer:
+      "Sí. Base incluye soporte base. Pro suma soporte prioritario y acompañamiento de implementación. Enterprise incluye una atención más cercana y una puesta en marcha ajustada al negocio.",
+  },
+  {
+    question: "¿Qué necesito para salir a producción?",
+    answer:
+      "Necesitas definir el plan, sucursal inicial, usuarios, cajas, zonas, mesas, impresoras y catálogo. A partir de ahí dejamos la operación lista para ventas, cocina y caja.",
+  },
 ];
