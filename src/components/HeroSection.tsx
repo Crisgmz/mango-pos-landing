@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroVideo from "../../assets/4524440-uhd_3840_2160_25fps.mov";
 import mangoLogo from "../../Artboard 1logo.png";
+import { primaryLinks } from "@/content/site";
 
 const mesas = [
   { name: "Mesa 1", status: "Ocupada" },
@@ -24,11 +25,6 @@ const statusColor: Record<string, string> = {
 export default function HeroSection() {
   const [visible, setVisible] = useState(false);
   useEffect(() => setVisible(true), []);
-
-  const scrollTo = (href: string) => {
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section className="relative isolate overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24">
@@ -64,11 +60,11 @@ export default function HeroSection() {
             </p>
 
             <div className="flex flex-wrap gap-3">
-              <Button size="lg" onClick={() => scrollTo("#precios")}>
-                Empieza gratis 14 días
+              <Button asChild size="lg">
+                <Link to={primaryLinks.pricing}>Ver planes y precios</Link>
               </Button>
               <Button asChild variant="ghost" size="lg">
-                <Link to="/caracteristicas">Ver funciones</Link>
+                <Link to={primaryLinks.features}>Ver funciones</Link>
               </Button>
             </div>
 

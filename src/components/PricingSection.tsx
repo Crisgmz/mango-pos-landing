@@ -173,7 +173,7 @@ export default function PricingSection({ mode = "summary" }: PricingSectionProps
               </div>
             </div>
 
-            <div className="mt-16 max-w-5xl mx-auto">
+            <div id="faq" className="mt-16 max-w-5xl mx-auto">
               <div className="text-center">
                 <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Preguntas frecuentes</span>
                 <h3 className="mt-2 text-3xl sm:text-4xl font-heading font-bold text-foreground">

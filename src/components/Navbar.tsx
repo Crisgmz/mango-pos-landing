@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 import mangoLogo from "../../Artboard 1logo.png";
 import { featureGroups } from "@/content/features";
+import { appUrl, helpLinks, primaryLinks } from "@/content/site";
 
 const featureIcons = {
   "Ventas por zona": LayoutGrid,
@@ -33,26 +34,11 @@ const featureIcons = {
   "Ventas a crédito": CreditCard,
 } as const;
 
-const helpItems = [
-  {
-    title: "Documentación",
-    desc: "Guías prácticas para configurar y operar MangoPOS.",
-  },
-  {
-    title: "Implementación",
-    desc: "Acompañamiento para salir a producción con mejor orden.",
-  },
-  {
-    title: "Soporte",
-    desc: "Canales de ayuda para resolver dudas operativas y técnicas.",
-  },
-];
-
 const navLinks = [
-  { label: "Inicio", href: "#", hasDropdown: false },
-  { label: "Funciones", href: "/caracteristicas", hasDropdown: true, isRoute: true },
-  { label: "Precios", href: "/precios", hasDropdown: false, isRoute: true },
-  { label: "Centro de ayuda", href: "#ayuda", hasDropdown: true },
+  { label: "Inicio", href: primaryLinks.home, hasDropdown: false, isRoute: true },
+  { label: "Funciones", href: primaryLinks.features, hasDropdown: true, isRoute: true },
+  { label: "Precios", href: primaryLinks.pricing, hasDropdown: false, isRoute: true },
+  { label: "Centro de ayuda", href: primaryLinks.pricingFaq, hasDropdown: true, isRoute: true },
 ];
 
 export default function Navbar() {
@@ -81,15 +67,11 @@ export default function Navbar() {
   const scrollTo = (href: string) => {
     setMobileOpen(false);
     setActiveDropdown(null);
-    if (href === "#") {
-      if (location.pathname !== "/") {
-        navigate("/");
-      } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-      return;
-    }
     if (href.startsWith("/")) {
+      if (href === "/" && location.pathname === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
       navigate(href);
       return;
     }
@@ -111,11 +93,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a
-            href="#"
+            href={primaryLinks.home}
             className="flex items-center"
             onClick={(e) => {
               e.preventDefault();
-              scrollTo("#");
+              scrollTo(primaryLinks.home);
             }}
           >
             <img
@@ -146,8 +128,10 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost" size="sm">Iniciar sesión</Button>
-            <Button size="sm" onClick={() => scrollTo("#precios")}>Prueba gratis</Button>
+            <Button asChild variant="ghost" size="sm">
+              <a href={appUrl} rel="noreferrer" target="_blank">Iniciar sesión</a>
+            </Button>
+            <Button size="sm" onClick={() => scrollTo(primaryLinks.pricing)}>Prueba gratis</Button>
           </div>
 
           <button
@@ -224,11 +208,16 @@ export default function Navbar() {
                   Centro de ayuda
                 </p>
                 <div className="mt-5 space-y-1">
-                  {helpItems.map((item) => (
-                    <div key={item.title} className="rounded-xl px-3 py-3 transition-colors hover:bg-secondary">
+                  {helpLinks.map((item) => (
+                    <Link
+                      key={item.title}
+                      className="block rounded-xl px-3 py-3 transition-colors hover:bg-secondary"
+                      onClick={() => setActiveDropdown(null)}
+                      to={item.href}
+                    >
                       <p className="text-sm font-heading font-semibold text-foreground">{item.title}</p>
                       <p className="mt-1 text-sm font-body leading-relaxed text-muted-foreground">{item.desc}</p>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -244,7 +233,9 @@ export default function Navbar() {
                   Si tu negocio ya está listo para implementar MangoPOS, te ayudamos con configuración inicial, estructura operativa y acompañamiento de salida a producción.
                 </p>
                 <div className="mt-6">
-                  <Button size="sm">Hablar con el equipo</Button>
+                  <Button asChild size="sm">
+                    <Link onClick={() => setActiveDropdown(null)} to={primaryLinks.finalCta}>Hablar con el equipo</Link>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -281,8 +272,10 @@ export default function Navbar() {
           </div>
 
           <div className="mt-4 flex flex-col gap-2">
-            <Button variant="ghost" className="w-full">Iniciar sesión</Button>
-            <Button className="w-full">Prueba gratis</Button>
+            <Button asChild variant="ghost" className="w-full">
+              <a href={appUrl} rel="noreferrer" target="_blank">Iniciar sesión</a>
+            </Button>
+            <Button className="w-full" onClick={() => scrollTo(primaryLinks.pricing)}>Prueba gratis</Button>
           </div>
         </div>
       )}

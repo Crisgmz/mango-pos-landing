@@ -1,5 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,12 +13,34 @@ import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
 
+function ScrollToHash() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) {
+      window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+      return;
+    }
+
+    const id = location.hash.replace("#", "");
+    const scrollToTarget = () => {
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    requestAnimationFrame(scrollToTarget);
+  }, [location.hash, location.pathname]);
+
+  return null;
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToHash />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/caracteristicas" element={<Caracteristicas />} />
