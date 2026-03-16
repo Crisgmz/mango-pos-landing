@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { addOns, comparisonRows, plans } from "@/content/pricing";
+import { comparisonRows, featureGroups, plans } from "@/content/pricing";
 
 type PricingSectionProps = {
   mode?: "summary" | "full";
@@ -32,7 +32,7 @@ export default function PricingSection({ mode = "summary" }: PricingSectionProps
               key={plan.name}
               className={`rounded-xl p-6 flex flex-col border ${
                 plan.popular
-                  ? "border-primary bg-primary text-primary-foreground shadow-lg shadow-primary/15"
+                  ? "border-success bg-success text-success-foreground shadow-lg shadow-success/15"
                   : "border-border bg-background text-foreground"
               }`}
             >
@@ -43,26 +43,31 @@ export default function PricingSection({ mode = "summary" }: PricingSectionProps
               )}
 
               <h3 className="font-heading font-bold text-lg">{plan.name}</h3>
-              <p className={`mt-2 text-sm leading-relaxed ${plan.popular ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+              <p className={`mt-2 text-sm leading-relaxed ${plan.popular ? "text-success-foreground/80" : "text-muted-foreground"}`}>
                 {plan.audience}
               </p>
 
-              <div className="mt-5">
+              <div className="mt-5 flex items-end gap-1">
                 <span className="text-3xl font-heading font-bold">{plan.priceLabel}</span>
+                {plan.priceSuffix && (
+                  <span className={`pb-1 text-sm font-body ${plan.popular ? "text-success-foreground/75" : "text-muted-foreground"}`}>
+                    {plan.priceSuffix}
+                  </span>
+                )}
               </div>
 
-              <p className={`text-xs font-body mt-1 ${plan.popular ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
+              <p className={`text-xs font-body mt-1 ${plan.popular ? "text-success-foreground/70" : "text-muted-foreground"}`}>
                 {plan.priceNote}
               </p>
 
-              <p className={`text-sm font-body mt-4 leading-relaxed ${plan.popular ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+              <p className={`text-sm font-body mt-4 leading-relaxed ${plan.popular ? "text-success-foreground/80" : "text-muted-foreground"}`}>
                 {plan.copy}
               </p>
 
               <ul className="mt-5 space-y-2 flex-1">
                 {(isFull ? plan.details : plan.summary).map((feature) => (
                   <li key={feature} className="text-sm font-body flex items-start gap-2">
-                    <span className={`mt-0.5 ${plan.popular ? "text-primary-foreground" : "text-primary"}`}>✓</span>
+                    <span className={`mt-0.5 ${plan.popular ? "text-success-foreground" : "text-primary"}`}>✓</span>
                     {feature}
                   </li>
                 ))}
@@ -76,7 +81,7 @@ export default function PricingSection({ mode = "summary" }: PricingSectionProps
                       : "bg-primary text-primary-foreground hover:bg-primary/90"
                   }`}
                 >
-                  Solicitar asesoría
+                  {plan.ctaLabel ?? "Solicitar asesoría"}
                 </Button>
               ) : (
                 <Button
@@ -146,40 +151,31 @@ export default function PricingSection({ mode = "summary" }: PricingSectionProps
               </div>
             </div>
 
-            <div className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-              <div className="rounded-2xl border border-border bg-background p-6 sm:p-8">
-                <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Add-ons y expansiones</span>
+            <div className="mt-12 rounded-2xl border border-border bg-background p-6 sm:p-8">
+              <div className="max-w-3xl">
+                <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Características del sistema</span>
                 <h3 className="mt-2 text-2xl font-heading font-bold text-foreground">
-                  Módulos que puedes activar según tu etapa
+                  Todo lo que ya puede vender MangoPOS en la landing
                 </h3>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  {addOns.map((item) => (
-                    <span key={item} className="rounded-full border border-border bg-secondary px-3 py-2 text-sm font-body text-foreground">
-                      {item}
-                    </span>
-                  ))}
-                </div>
+                <p className="mt-3 text-sm font-body text-muted-foreground leading-relaxed">
+                  Aquí concentramos las funcionalidades reales del sistema en bloques comerciales fáciles de entender, tomando como base los módulos que ya existen y los que están preparados para crecer.
+                </p>
               </div>
 
-              <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
-                <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Recomendación comercial</span>
-                <h3 className="mt-2 text-2xl font-heading font-bold text-foreground">
-                  La presentación de planes tiene que ayudar a vender
-                </h3>
-                <ul className="mt-5 space-y-3">
-                  <li className="text-sm font-body text-muted-foreground flex items-start gap-2">
-                    <span className="mt-0.5 text-primary">•</span>
-                    Deja claro qué viene incluido desde el primer plan.
-                  </li>
-                  <li className="text-sm font-body text-muted-foreground flex items-start gap-2">
-                    <span className="mt-0.5 text-primary">•</span>
-                    Presenta los upgrades como mejoras naturales del crecimiento operativo.
-                  </li>
-                  <li className="text-sm font-body text-muted-foreground flex items-start gap-2">
-                    <span className="mt-0.5 text-primary">•</span>
-                    Reserva implementación premium, integraciones y módulos especiales para propuestas más consultivas.
-                  </li>
-                </ul>
+              <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                {featureGroups.map((group) => (
+                  <div key={group.title} className="rounded-xl border border-border bg-secondary/30 p-5">
+                    <h4 className="font-heading font-bold text-base text-foreground">{group.title}</h4>
+                    <ul className="mt-4 space-y-2">
+                      {group.items.map((item) => (
+                        <li key={item} className="text-sm font-body text-muted-foreground flex items-start gap-2">
+                          <span className="mt-0.5 text-primary">•</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </div>
           </>
