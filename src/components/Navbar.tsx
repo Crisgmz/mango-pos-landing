@@ -1,67 +1,56 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import {
+  ChevronDown,
+  ClipboardList,
+  CookingPot,
+  CreditCard,
+  FolderKanban,
+  LayoutGrid,
+  LineChart,
+  Package,
+  Receipt,
+  Store,
+  Users,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 import mangoLogo from "../../Artboard 1logo.png";
+import { featureGroups } from "@/content/features";
 
-const caracteristicasData = [
-  {
-    emoji: "🍽️",
-    title: "Operación diaria",
-    desc: "Punto de venta, mesas, caja y comandas a cocina.",
-  },
-  {
-    emoji: "📋",
-    title: "Menú y productos",
-    desc: "Productos, recetas, modificadores y promociones.",
-  },
-  {
-    emoji: "📦",
-    title: "Inventario y compras",
-    desc: "Control de stock, kardex, órdenes y recepción.",
-  },
-  {
-    emoji: "📊",
-    title: "Reportes y control",
-    desc: "Ventas, caja, compras, inventario y trazabilidad.",
-  },
-  {
-    emoji: "🧾",
-    title: "Fiscal",
-    desc: "NCF, ITBIS y comprobantes listos para la DGII.",
-  },
-  {
-    emoji: "👥",
-    title: "Clientes y equipo",
-    desc: "Gestión de clientes, roles, permisos y sucursales.",
-  },
-];
+const featureIcons = {
+  "Ventas por zona": LayoutGrid,
+  "KDS de cocina": CookingPot,
+  "Gestión de productos": Package,
+  "Combos y promociones": FolderKanban,
+  Reportes: LineChart,
+  "Usuarios y roles": Users,
+  "Configuración fiscal": Receipt,
+  "Gestión de metas": ClipboardList,
+  Sucursales: Store,
+  "Kardex por sucursal": Package,
+  Fidelización: CreditCard,
+  "Ventas a crédito": CreditCard,
+} as const;
 
-const ayudaData = [
+const helpItems = [
   {
-    emoji: "📖",
     title: "Documentación",
-    desc: "Guías completas para usar Mango POS.",
+    desc: "Guías prácticas para configurar y operar MangoPOS.",
   },
   {
-    emoji: "🎓",
-    title: "Tutoriales",
-    desc: "Videos y artículos paso a paso.",
+    title: "Implementación",
+    desc: "Acompañamiento para salir a producción con mejor orden.",
   },
   {
-    emoji: "💬",
     title: "Soporte",
-    desc: "Contacta a nuestro equipo de soporte.",
-  },
-  {
-    emoji: "🔔",
-    title: "Estado del sistema",
-    desc: "Revisa el estado de la plataforma en tiempo real.",
+    desc: "Canales de ayuda para resolver dudas operativas y técnicas.",
   },
 ];
 
 const navLinks = [
   { label: "Inicio", href: "#", hasDropdown: false },
-  { label: "Características", href: "#caracteristicas", hasDropdown: true },
+  { label: "Funciones", href: "/caracteristicas", hasDropdown: true, isRoute: true },
   { label: "Precios", href: "/precios", hasDropdown: false, isRoute: true },
   { label: "Centro de ayuda", href: "#ayuda", hasDropdown: true },
 ];
@@ -115,10 +104,11 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : "bg-transparent"
+        scrolled ? "bg-background/90 backdrop-blur-lg border-b border-border" : "bg-background/80 backdrop-blur-md"
       }`}
+      onMouseLeave={closeDropdown}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a
             href="#"
@@ -135,78 +125,31 @@ export default function Navbar() {
             />
           </a>
 
-          {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <div
                 key={link.label}
                 className="relative"
                 onMouseEnter={() => link.hasDropdown && openDropdown(link.label)}
-                onMouseLeave={closeDropdown}
               >
                 <button
                   onClick={() => scrollTo(link.isRoute ? link.href : link.href)}
-                  className="px-3 py-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+                  className={`px-3 py-2 text-sm font-body transition-colors flex items-center gap-1 ${
+                    activeDropdown === link.label ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                  }`}
                 >
                   {link.label}
-                  {link.hasDropdown && (
-                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  )}
+                  {link.hasDropdown && <ChevronDown className="h-3.5 w-3.5" />}
                 </button>
-
-                {/* Características Dropdown */}
-                {link.label === "Características" && activeDropdown === "Características" && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[520px]">
-                    <div className="bg-background rounded-lg border border-border shadow-lg p-5 grid grid-cols-2 gap-4 animate-fade-in">
-                      {caracteristicasData.map((item) => (
-                        <div
-                          key={item.title}
-                          className="flex items-start gap-3 p-2 rounded-md hover:bg-secondary transition-colors cursor-pointer"
-                          onClick={() => scrollTo("#caracteristicas")}
-                        >
-                          <span className="text-lg mt-0.5">{item.emoji}</span>
-                          <div>
-                            <p className="font-heading font-semibold text-sm text-foreground">{item.title}</p>
-                            <p className="text-xs text-muted-foreground mt-0.5">{item.desc}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Centro de ayuda Dropdown */}
-                {link.label === "Centro de ayuda" && activeDropdown === "Centro de ayuda" && (
-                  <div className="absolute top-full right-0 pt-2 w-[320px]">
-                    <div className="bg-background rounded-lg border border-border shadow-lg p-4 space-y-1 animate-fade-in">
-                      {ayudaData.map((item) => (
-                        <div
-                          key={item.title}
-                          className="flex items-start gap-3 p-2 rounded-md hover:bg-secondary transition-colors cursor-pointer"
-                        >
-                          <span className="text-lg mt-0.5">{item.emoji}</span>
-                          <div>
-                            <p className="font-heading font-semibold text-sm text-foreground">{item.title}</p>
-                            <p className="text-xs text-muted-foreground mt-0.5">{item.desc}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
             ))}
           </div>
 
-          {/* Right */}
           <div className="hidden md:flex items-center gap-3">
             <Button variant="ghost" size="sm">Iniciar sesión</Button>
             <Button size="sm" onClick={() => scrollTo("#precios")}>Prueba gratis</Button>
           </div>
 
-          {/* Mobile toggle */}
           <button
             className="md:hidden p-2 text-foreground"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -221,7 +164,94 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {activeDropdown === "Funciones" && (
+        <div className="hidden md:block border-t border-border bg-background shadow-[0_22px_50px_-35px_rgba(15,23,42,0.4)]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="grid grid-cols-[1.2fr_1.2fr_1fr] gap-10">
+              {Object.values(featureGroups).map((group) => (
+                <div key={group.title}>
+                  <p className="text-xs font-body font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                    {group.title}
+                  </p>
+                  <div className="mt-5 space-y-1">
+                    {group.items.map((item) => {
+                      const Icon = featureIcons[item.shortTitle as keyof typeof featureIcons] ?? LayoutGrid;
+                      return (
+                        <Link
+                          key={item.slug}
+                          className="flex items-start gap-3 rounded-xl px-3 py-3 transition-colors hover:bg-secondary"
+                          onClick={() => setActiveDropdown(null)}
+                          to={`/funciones/${item.slug}`}
+                        >
+                          <span className="mt-0.5 text-muted-foreground">
+                            <Icon className="h-4.5 w-4.5" />
+                          </span>
+                          <span>
+                            <span className="block text-sm font-heading font-semibold text-foreground">
+                              {item.shortTitle}
+                            </span>
+                            <span className="mt-1 block text-sm font-body leading-relaxed text-muted-foreground">
+                              {item.shortDescription}
+                            </span>
+                          </span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 border-t border-border pt-5">
+              <Link
+                className="inline-flex items-center gap-2 text-sm font-body font-medium text-foreground transition-colors hover:text-primary"
+                onClick={() => setActiveDropdown(null)}
+                to="/caracteristicas"
+              >
+                Ver todas las características
+                <ChevronDown className="h-4 w-4 -rotate-90" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeDropdown === "Centro de ayuda" && (
+        <div className="hidden md:block border-t border-border bg-background shadow-[0_22px_50px_-35px_rgba(15,23,42,0.4)]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="grid grid-cols-[1.2fr_1fr] gap-12">
+              <div>
+                <p className="text-xs font-body font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                  Centro de ayuda
+                </p>
+                <div className="mt-5 space-y-1">
+                  {helpItems.map((item) => (
+                    <div key={item.title} className="rounded-xl px-3 py-3 transition-colors hover:bg-secondary">
+                      <p className="text-sm font-heading font-semibold text-foreground">{item.title}</p>
+                      <p className="mt-1 text-sm font-body leading-relaxed text-muted-foreground">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-border bg-secondary/35 p-6">
+                <p className="text-xs font-body font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                  Soporte para producción
+                </p>
+                <h3 className="mt-3 text-2xl font-heading font-bold text-foreground">
+                  Te acompañamos antes y después de salir en vivo
+                </h3>
+                <p className="mt-3 text-sm font-body leading-relaxed text-muted-foreground">
+                  Si tu negocio ya está listo para implementar MangoPOS, te ayudamos con configuración inicial, estructura operativa y acompañamiento de salida a producción.
+                </p>
+                <div className="mt-6">
+                  <Button size="sm">Hablar con el equipo</Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {mobileOpen && (
         <div className="md:hidden bg-background border-t border-border p-4 animate-fade-in">
           {navLinks.map((link) => (
@@ -233,6 +263,23 @@ export default function Navbar() {
               {link.label}
             </button>
           ))}
+
+          <div className="mt-4 rounded-xl border border-border bg-secondary/35 p-3">
+            <p className="text-xs font-body font-medium uppercase tracking-[0.18em] text-muted-foreground">Funciones destacadas</p>
+            <div className="mt-3 space-y-2">
+              {featureGroups.operacion.items.slice(0, 4).map((item) => (
+                <Link
+                  key={item.slug}
+                  className="block rounded-md px-3 py-2 text-sm font-body text-foreground hover:bg-background"
+                  onClick={() => setMobileOpen(false)}
+                  to={`/funciones/${item.slug}`}
+                >
+                  {item.shortTitle}
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <div className="mt-4 flex flex-col gap-2">
             <Button variant="ghost" className="w-full">Iniciar sesión</Button>
             <Button className="w-full">Prueba gratis</Button>

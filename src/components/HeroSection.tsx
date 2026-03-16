@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroVideo from "../../assets/4524440-uhd_3840_2160_25fps.mov";
 import mangoLogo from "../../Artboard 1logo.png";
@@ -66,8 +67,8 @@ export default function HeroSection() {
               <Button size="lg" onClick={() => scrollTo("#precios")}>
                 Empieza gratis 14 días
               </Button>
-              <Button variant="ghost" size="lg" onClick={() => scrollTo("#caracteristicas")}>
-                Ver funciones
+              <Button asChild variant="ghost" size="lg">
+                <Link to="/caracteristicas">Ver funciones</Link>
               </Button>
             </div>
 
