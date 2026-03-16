@@ -13,10 +13,10 @@ export default function FeaturesSection() {
         <div className="max-w-3xl">
           <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Características</span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-foreground leading-tight">
-            En el home dejamos solo un resumen
+            Una vista clara de cómo se organiza MangoPOS
           </h2>
           <p className="mt-4 text-muted-foreground font-body leading-relaxed">
-            La explicación completa de módulos, capturas y páginas individuales vive en `Características`. Aquí solo mostramos cómo se organiza MangoPOS para que la portada no se sienta cargada.
+            Estas categorías agrupan los módulos principales de la plataforma para que puedas entender rápidamente cómo MangoPOS cubre operación, control y crecimiento.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ export default function FeaturesSection() {
               </div>
 
               <p className="mt-6 text-sm font-body leading-relaxed text-muted-foreground">
-                El detalle visual y comercial de este bloque está concentrado en la página de características.
+                Cada bloque reúne funciones relacionadas para que sea más fácil evaluar el alcance del sistema.
               </p>
             </article>
           ))}

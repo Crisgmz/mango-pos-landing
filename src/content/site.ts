@@ -1,11 +1,10 @@
-export const appUrl = "https://sistematest.mangopos.do";
+export const appUrl = "https://app.mangopos.com";
 
 export const primaryLinks = {
   home: "/",
   features: "/caracteristicas",
   pricing: "/precios",
   pricingFaq: "/precios#faq",
-  testimonials: "/#testimonios",
   finalCta: "/#contacto",
   app: appUrl,
 };
@@ -32,7 +31,7 @@ export const footerSections = {
   Producto: [
     { label: "Características", href: primaryLinks.features },
     { label: "Precios", href: primaryLinks.pricing },
-    { label: "Testimonios", href: primaryLinks.testimonials },
+    { label: "Preguntas frecuentes", href: primaryLinks.pricingFaq },
     { label: "Acceder al sistema", href: primaryLinks.app, external: true },
   ],
   Recursos: [

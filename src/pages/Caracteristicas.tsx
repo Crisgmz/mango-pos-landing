@@ -95,7 +95,7 @@ export default function Caracteristicas() {
             <div className="rounded-2xl border border-border bg-secondary/35 p-6 sm:p-8">
               <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
                 <div>
-                  <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Resumen</span>
+                  <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Panorama general</span>
                   <h2 className="mt-2 text-2xl font-heading font-bold text-foreground">
                     MangoPOS no se queda en POS básico
                   </h2>

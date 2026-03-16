@@ -14,43 +14,28 @@ export default function FinalCTA() {
         </span>
 
         <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground leading-tight">
-          ¿Quieres ver MangoPOS funcionando en una operación real?
+          Lleva tu operación a una plataforma más ordenada, rápida y escalable
         </h2>
 
         <p className="mt-4 text-muted-foreground font-body leading-relaxed max-w-lg mx-auto">
-          Explora el demo, revisa los planes y valida si encaja con tu restaurante. Si ya eres cliente, también puedes entrar directo al sistema desde aquí.
+          Revisa las funciones, compara los planes y evalúa qué configuración encaja mejor con tu restaurante, cafetería, bar o negocio de comida.
         </p>
 
-        <div className="mt-8 grid gap-3 sm:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-background p-5 text-left shadow-sm">
-            <p className="text-xs font-body font-medium uppercase tracking-[0.18em] text-primary">Nuevo negocio</p>
-            <h3 className="mt-2 text-xl font-heading font-bold text-foreground">Ver demo y evaluar implementación</h3>
-            <p className="mt-2 text-sm font-body leading-relaxed text-muted-foreground">
-              Ideal si todavía estás comparando opciones y quieres revisar el sistema antes de decidir.
-            </p>
-            <Button asChild className="mt-5 w-full" size="lg">
-              <a href={appUrl} rel="noreferrer" target="_blank">Ver demo del sistema</a>
-            </Button>
-          </div>
-
-          <div className="rounded-2xl border border-border bg-background p-5 text-left shadow-sm">
-            <p className="text-xs font-body font-medium uppercase tracking-[0.18em] text-primary">Evaluación comercial</p>
-            <h3 className="mt-2 text-xl font-heading font-bold text-foreground">Revisar planes, alcance y soporte</h3>
-            <p className="mt-2 text-sm font-body leading-relaxed text-muted-foreground">
-              Mira qué incluye cada plan y qué nivel de acompañamiento encaja mejor con tu operación.
-            </p>
-            <Button asChild className="mt-5 w-full" size="lg" variant="outline">
-              <Link to={primaryLinks.pricing}>Ver planes y precios</Link>
-            </Button>
-          </div>
+        <div className="flex flex-wrap justify-center gap-3 mt-8">
+          <Button asChild size="lg">
+            <Link to={primaryLinks.features}>Explorar características</Link>
+          </Button>
+          <Button asChild variant="outline" size="lg">
+            <Link to={primaryLinks.pricing}>14 Días Gratis</Link>
+          </Button>
         </div>
 
         <p className="mt-6 text-xs text-muted-foreground font-body">
-          Demo accesible · Activación guiada · Operación pensada para restaurantes en RD
+          Implementación guiada · Configuración operativa · Escalable según tu negocio
         </p>
 
         <p className="mt-3 text-xs text-muted-foreground font-body">
-          ¿Ya eres cliente? <a className="text-foreground underline underline-offset-4" href={appUrl} rel="noreferrer" target="_blank">Entrar al sistema</a>
+          ¿Ya eres cliente? <a className="text-foreground underline underline-offset-4" href={appUrl} rel="noreferrer" target="_blank">Acceder al sistema</a>
         </p>
       </div>
     </section>

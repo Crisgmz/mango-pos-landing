@@ -34,8 +34,8 @@ export default function PricingSection({ mode = "summary" }: PricingSectionProps
           </h2>
           <p className="mt-3 text-sm font-body text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {isFull
-              ? "MangoPOS centraliza ventas, mesas, cocina, caja, productos, usuarios e impresión en una sola plataforma. El alcance final puede ajustarse luego con precios, límites y beneficios comerciales."
-              : "En el home mostramos solo un resumen. Si quieres ver el detalle completo de cada plan, add-ons y alcance comercial, puedes abrir la pantalla de precios."}
+              ? "Cada plan responde a un nivel distinto de operación. Aquí puedes comparar alcance, soporte y capacidad de crecimiento para elegir la opción que mejor encaje con tu negocio."
+              : "Compara de forma rápida el enfoque de cada plan y revisa luego el detalle completo de alcance, soporte y escalabilidad en la página de precios."}
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export default function PricingSection({ mode = "summary" }: PricingSectionProps
                       : "bg-primary text-primary-foreground hover:bg-primary/90"
                   }`}
                 >
-                  <Link to="/precios">Ver más</Link>
+                  <Link to="/precios">Ver detalle</Link>
                 </Button>
               )}
             </div>
@@ -177,10 +177,10 @@ export default function PricingSection({ mode = "summary" }: PricingSectionProps
               <div className="text-center">
                 <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Preguntas frecuentes</span>
                 <h3 className="mt-2 text-3xl sm:text-4xl font-heading font-bold text-foreground">
-                  Respuestas claras antes de salir a producción
+                  Respuestas claras antes de tomar una decisión
                 </h3>
                 <p className="mt-3 text-sm font-body text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                  Aquí respondemos las preguntas que más pesan cuando un negocio ya está por decidirse: activación, soporte, cambios de plan y cómo funciona Enterprise.
+                  Aquí respondemos las preguntas más importantes antes de elegir un plan: activación, soporte, cambios de plan y cómo funciona Enterprise.
                 </p>
               </div>
 

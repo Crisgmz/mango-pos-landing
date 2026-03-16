@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroPreview from "../../assets/FireShot Capture 023 - MangoPOS - [sistematest.mangopos.do].png";
 import mangoLogo from "../../Artboard 1logo.png";
-import { appUrl, primaryLinks } from "@/content/site";
+import { primaryLinks } from "@/content/site";
 
 const mesas = [
   { name: "Mesa 1", status: "Ocupada" },
@@ -48,25 +48,24 @@ export default function HeroSection() {
             </span>
 
             <h1 className="text-4xl sm:text-5xl font-heading font-bold leading-[1.1] text-foreground tracking-tight">
-              Cobra más rápido, organiza cocina y controla tu operación con{" "}
-              <span className="text-primary">Mango POS</span>
+              El sistema POS para restaurantes que te ayuda a vender, cobrar y operar con más orden
             </h1>
 
             <p className="text-base text-muted-foreground max-w-lg leading-relaxed">
-              Un sistema POS pensado para restaurantes en República Dominicana: mesas, comandas, cocina, inventario, caja, reportes y operación lista para la DGII.
+              Mango POS centraliza mesas, comandas, cocina, caja, productos, reportes y configuración fiscal en una plataforma pensada para operaciones reales en República Dominicana.
             </p>
 
             <div className="grid gap-2 text-sm font-body text-muted-foreground sm:grid-cols-2 max-w-xl">
-              <div className="rounded-lg border border-border bg-background/70 px-3 py-2">Implementación guiada según tu operación</div>
-              <div className="rounded-lg border border-border bg-background/70 px-3 py-2">Cobros, NCF y control operativo en un solo lugar</div>
+              <div className="rounded-lg border border-border bg-background/70 px-3 py-2">Flujo de venta ágil para salón, mostrador y cocina</div>
+              <div className="rounded-lg border border-border bg-background/70 px-3 py-2">Control operativo y estructura fiscal desde un solo sistema</div>
             </div>
 
             <div className="flex flex-wrap gap-3">
               <Button asChild size="lg">
-                <a href={appUrl} rel="noreferrer" target="_blank">Ver demo del sistema</a>
+                <Link to={primaryLinks.pricing}>14 Días Gratis</Link>
               </Button>
               <Button asChild variant="ghost" size="lg">
-                <Link to={primaryLinks.pricing}>Ver planes y precios</Link>
+                <Link to={primaryLinks.features}>Explorar funciones</Link>
               </Button>
             </div>
 
@@ -82,7 +81,7 @@ export default function HeroSection() {
             <div className="absolute -bottom-2 -left-2 sm:left-4 z-10 animate-float-down">
               <div className="bg-background border border-border rounded-full px-3 py-1.5 shadow-sm flex items-center gap-2 text-xs font-body">
                 <span className="w-2 h-2 rounded-full bg-primary" />
-                NCF generado automáticamente
+                Control fiscal configurable
               </div>
             </div>
 

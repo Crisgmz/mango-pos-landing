@@ -1,10 +1,10 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const checks = [
-  "Facturación fiscal con NCF automático",
-  "ITBIS configurado según tipo de negocio",
-  "Comprobantes con datos reales del contribuyente",
-  "Historial fiscal completo y auditable",
+  "Configuración de comprobantes fiscales",
+  "ITBIS y estructura impositiva por tipo de operación",
+  "Datos del contribuyente dentro de la configuración del negocio",
+  "Base preparada para una operación fiscal más ordenada",
 ];
 
 export default function FiscalSection() {
@@ -18,10 +18,10 @@ export default function FiscalSection() {
           <div>
             <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Fiscal y cumplimiento</span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-foreground leading-tight">
-              Listo para la DGII desde el primer día
+              Configuración fiscal pensada para operar en RD
             </h2>
             <p className="mt-4 text-muted-foreground font-body leading-relaxed max-w-md">
-              Genera comprobantes fiscales válidos, calcula el ITBIS automáticamente y mantén tu negocio en regla sin complicaciones.
+              Organiza NCF, estructura impositiva y datos fiscales del negocio desde un mismo entorno para trabajar con más claridad y menos fricción operativa.
             </p>
             <ul className="mt-6 space-y-3">
               {checks.map((c) => (
@@ -74,7 +74,7 @@ export default function FiscalSection() {
                   Fiscalmente válido
                 </span>
                 <span className="px-2 py-1 rounded-full bg-success/15 text-success text-[10px] font-medium">
-                  Enviado a DGII
+                  Configuración fiscal activa
                 </span>
               </div>
             </div>

@@ -1,12 +1,12 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const benefits = [
-  { num: "1", label: "Velocidad", title: "Vende más rápido", desc: "Mesas, caja, pagos, cocina e impresión en un solo sistema.", featured: false },
-  { num: "2", label: "Control", title: "Controla tu operación", desc: "Inventario, compras, recetas, cierres y reportes en tiempo real.", featured: true },
-  { num: "3", label: "Flexibilidad", title: "Adáptalo a tu negocio", desc: "Restaurante, comida rápida, bar, cafetería, delivery o food truck.", featured: false },
-  { num: "4", label: "Equipo", title: "Administra tu equipo", desc: "Usuarios, roles, permisos y supervisión centralizada.", featured: false },
-  { num: "5", label: "Escala", title: "Multi-sucursal", desc: "Subdominio por negocio, cajas e impresoras por local.", featured: false },
-  { num: "6", label: "Cumplimiento", title: "Cumple y crece", desc: "NCF, ITBIS, comprobantes listos para operar en RD.", featured: false },
+  { num: "1", label: "Velocidad", title: "Vende con menos fricción", desc: "Mesas, caja, cobros y cocina conectados dentro del mismo flujo operativo.", featured: false },
+  { num: "2", label: "Control", title: "Organiza la operación diaria", desc: "Productos, usuarios, cierres, reportes y configuración del negocio en una sola plataforma.", featured: true },
+  { num: "3", label: "Flexibilidad", title: "Se adapta al tipo de servicio", desc: "Úsalo en salón, mostrador, cafetería, bar o formatos de comida rápida.", featured: false },
+  { num: "4", label: "Equipo", title: "Trabaja con roles y permisos", desc: "Define accesos según el puesto y mantén más orden en caja y operación.", featured: false },
+  { num: "5", label: "Escalabilidad", title: "Crece sin cambiar de sistema", desc: "Empieza con una operación sencilla y suma más control a medida que tu negocio evoluciona.", featured: false },
+  { num: "6", label: "Fiscal", title: "Prepara tu operación para RD", desc: "Maneja impuestos y configuración fiscal desde una estructura pensada para República Dominicana.", featured: false },
 ];
 
 export default function BenefitsSection() {
