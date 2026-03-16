@@ -35,7 +35,7 @@ export default function FinalCTA() {
         </p>
 
         <p className="mt-3 text-xs text-muted-foreground font-body">
-          ¿Ya eres cliente? <a className="text-foreground underline underline-offset-4" href={appUrl} rel="noreferrer" target="_blank">Acceder al sistema</a>
+          ¿Ya tienes cuenta? <a className="text-foreground underline underline-offset-4" href={appUrl} rel="noreferrer" target="_blank">Iniciar Sesión</a>
         </p>
       </div>
     </section>

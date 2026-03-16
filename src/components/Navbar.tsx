@@ -128,11 +128,11 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            <Button asChild variant="ghost" size="sm">
-              <Link to={primaryLinks.pricing}>Ver precios</Link>
-            </Button>
             <Button asChild size="sm">
               <Link to={primaryLinks.pricing}>14 Días Gratis</Link>
+            </Button>
+            <Button asChild variant="ghost" size="sm">
+              <a href={appUrl} rel="noreferrer" target="_blank">Iniciar Sesión</a>
             </Button>
           </div>
 
@@ -274,11 +274,11 @@ export default function Navbar() {
           </div>
 
           <div className="mt-4 flex flex-col gap-2">
-            <Button asChild variant="ghost" className="w-full">
-              <Link to={primaryLinks.pricing}>Ver precios</Link>
-            </Button>
             <Button asChild className="w-full">
               <Link to={primaryLinks.pricing}>14 Días Gratis</Link>
+            </Button>
+            <Button asChild variant="ghost" className="w-full">
+              <a href={appUrl} rel="noreferrer" target="_blank">Iniciar Sesión</a>
             </Button>
           </div>
         </div>

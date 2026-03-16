@@ -1,4 +1,4 @@
-export const appUrl = "https://app.mangopos.com";
+export const appUrl = "https://app.mangopos.do/login";
 
 export const primaryLinks = {
   home: "/",
