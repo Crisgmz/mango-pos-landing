@@ -1,0 +1,224 @@
+MANGOPOS
+TERMINOS Y CONDICIONES DE USO
+
+Borrador inicial para revision interna
+Basado en la estructura general observada en documentos publicos de Toast, pero redactado y adaptado para MangoPOS.
+Este texto debe ser revisado por asesoria legal antes de publicarse.
+
+Fecha de entrada en vigor: [POR DEFINIR]
+Ultima actualizacion: [POR DEFINIR]
+
+1. ACEPTACION DE LOS TERMINOS
+
+Estos Terminos y Condiciones regulan el acceso y uso del sitio web, software, plataforma, modulos, aplicaciones, interfaces, servicios, integraciones y funcionalidades ofrecidos por MangoPOS.
+
+Al acceder, navegar, registrarse, contratar o usar MangoPOS, usted acepta estos Terminos. Si no esta de acuerdo, no debe usar la plataforma.
+
+Cuando una persona utiliza MangoPOS en nombre de una empresa, declara que tiene autoridad suficiente para obligar a dicha empresa conforme a estos Terminos.
+
+2. QUIEN PUEDE USAR MANGOPOS
+
+Para usar MangoPOS usted debe:
+
+- tener capacidad legal suficiente para contratar;
+- proporcionar informacion veraz y actualizada;
+- usar la plataforma solo para fines comerciales y operativos legitimos;
+- cumplir estos Terminos y las leyes aplicables.
+
+MangoPOS puede solicitar validaciones adicionales de identidad, negocio o autorizacion cuando resulte necesario.
+
+3. DESCRIPCION DEL SERVICIO
+
+MangoPOS es una plataforma orientada a restaurantes y negocios de comida que puede incluir, entre otros, los siguientes modulos:
+
+- punto de venta;
+- mesas y zonas;
+- cocina y comandas;
+- caja y pagos;
+- productos, menus y combos;
+- usuarios, roles y permisos;
+- configuracion fiscal;
+- reportes;
+- inventario y kardex;
+- sucursales;
+- fidelizacion;
+- ventas a credito;
+- integraciones y funcionalidades empresariales.
+
+La disponibilidad real de cada funcion dependera del plan contratado, del alcance comercial acordado y de la configuracion activa de cada cliente.
+
+4. REGISTRO, CUENTAS Y ACCESOS
+
+El cliente es responsable de:
+
+- custodiar usuarios, contrasenas y accesos;
+- definir permisos por rol de forma adecuada;
+- asegurar que solo personal autorizado utilice la plataforma;
+- revisar la informacion cargada por sus usuarios;
+- notificar a MangoPOS cualquier uso no autorizado o incidente de seguridad.
+
+MangoPOS puede suspender, limitar o restablecer accesos por razones de seguridad, cumplimiento, mantenimiento o investigacion de actividad irregular.
+
+5. RESPONSABILIDADES DEL CLIENTE
+
+El cliente acepta que es responsable de:
+
+- la operacion diaria de su negocio;
+- la exactitud de productos, precios, impuestos, recetas, mesas, usuarios y configuraciones;
+- la validez de la informacion fiscal o comercial que cargue;
+- la legalidad de las ventas, promociones, comprobantes y procesos ejecutados a traves del sistema;
+- el uso que sus empleados, contratistas o administradores hagan de MangoPOS;
+- revisar su operacion antes de salir a produccion.
+
+Si el cliente activa modulos como fidelizacion, credito, facturacion o integraciones, tambien sera responsable de su uso conforme a la ley aplicable y a su propia relacion con consumidores y empleados.
+
+6. PLANES, COTIZACIONES Y PAGOS
+
+Los precios, planes, limites, modulos incluidos, implementacion, soporte y cualquier servicio adicional se regiran por:
+
+- la propuesta comercial;
+- el plan publicado por MangoPOS;
+- la orden de servicio;
+- el acuerdo particular con el cliente.
+
+MangoPOS puede modificar precios o condiciones para renovaciones futuras, siempre que lo comunique razonablemente conforme al acuerdo aplicable.
+
+Salvo pacto distinto, los pagos vencidos pueden dar lugar a suspension de accesos, limitacion de funciones o cancelacion del servicio.
+
+7. USO ACEPTABLE
+
+Usted no debe usar MangoPOS para:
+
+- violar leyes, reglamentos o derechos de terceros;
+- intentar acceder sin autorizacion a sistemas, cuentas o datos;
+- interferir con la seguridad, integridad o disponibilidad del servicio;
+- introducir malware, scripts maliciosos o codigo dañino;
+- realizar fraude, suplantacion o manipulacion indebida de transacciones;
+- copiar, descompilar, replicar, revender o explotar MangoPOS fuera del alcance autorizado;
+- usar el sistema de forma que afecte injustificadamente a otros clientes o a la infraestructura.
+
+MangoPOS puede investigar conductas sospechosas y tomar medidas razonables, incluyendo suspension temporal o terminacion.
+
+8. DATOS DEL CLIENTE Y CONTENIDO CARGADO
+
+El cliente conserva sus derechos sobre la informacion que carga o procesa en la plataforma, sujeto a los permisos necesarios para que MangoPOS pueda prestar el servicio.
+
+El cliente declara que tiene derecho a usar, tratar y cargar en MangoPOS los datos de su negocio, sus empleados y sus clientes.
+
+MangoPOS podra tratar dicha informacion para:
+
+- operar la plataforma;
+- brindar soporte e implementacion;
+- asegurar disponibilidad y seguridad;
+- generar respaldos;
+- cumplir obligaciones legales;
+- mejorar funcionalidades, preferiblemente usando datos agregados o desidentificados cuando sea viable.
+
+9. PRIVACIDAD
+
+El uso de informacion personal se rige adicionalmente por la Politica de Privacidad de MangoPOS.
+
+Cuando MangoPOS trate datos por cuenta del cliente comercial, ambas partes deberan cumplir las responsabilidades que les correspondan segun la ley y el rol efectivo de cada una.
+
+10. SERVICIOS DE TERCEROS
+
+MangoPOS puede integrarse con terceros, incluyendo pasarelas de pago, servicios fiscales, impresoras, mensajeria, analitica u otros proveedores.
+
+El uso de esos servicios puede estar sujeto a terminos propios del tercero. MangoPOS no sera responsable por servicios, interrupciones o decisiones adoptadas por proveedores externos fuera de su control razonable.
+
+11. PROPIEDAD INTELECTUAL
+
+MangoPOS y todo su software, diseño, interfaz, documentacion, marcas, contenido, logotipos, estructura, mejoras y funcionalidades son propiedad de MangoPOS o de sus licenciantes.
+
+Estos Terminos no transfieren propiedad intelectual al cliente. Solo se concede un derecho limitado, revocable, no exclusivo e intransferible de uso, estrictamente conforme al plan contratado y al tiempo de vigencia del servicio.
+
+Queda prohibido copiar, modificar, distribuir, sublicenciar, vender, descompilar o intentar extraer el codigo fuente, salvo que la ley lo permita expresamente.
+
+12. FEEDBACK
+
+Si el cliente propone ideas, observaciones, sugerencias o mejoras sobre MangoPOS, podremos usar ese feedback para mejorar el servicio sin obligacion de compensacion, salvo acuerdo escrito distinto.
+
+13. DISPONIBILIDAD, CAMBIOS Y MANTENIMIENTO
+
+MangoPOS puede actualizar, modificar, mejorar, reemplazar o descontinuar partes del servicio por razones tecnicas, operativas, comerciales, legales o de seguridad.
+
+Tambien podremos realizar mantenimientos programados o correctivos que afecten temporalmente la disponibilidad.
+
+Aunque procuramos continuidad razonable, no garantizamos operacion ininterrumpida o libre de errores.
+
+14. SUSPENSION Y TERMINACION
+
+MangoPOS puede suspender o terminar el acceso total o parcial al servicio si:
+
+- existe incumplimiento material de estos Terminos;
+- hay falta de pago;
+- detectamos fraude, uso abusivo o riesgos de seguridad;
+- hay requerimiento legal o regulatorio;
+- el cliente usa el sistema fuera del alcance permitido.
+
+El cliente tambien puede terminar la relacion conforme a su contrato o plan aplicable.
+
+La terminacion no elimina automaticamente obligaciones pendientes de pago, confidencialidad, propiedad intelectual, limitacion de responsabilidad o resolucion de disputas.
+
+15. EXCLUSION DE GARANTIAS
+
+En la maxima medida permitida por la ley, MangoPOS se ofrece "tal cual" y "segun disponibilidad".
+
+No garantizamos, entre otras cosas:
+
+- que el servicio estara disponible sin interrupciones en todo momento;
+- que sera totalmente libre de errores;
+- que toda integracion de terceros funcionara siempre sin incidentes;
+- que el sistema evitara por si solo errores operativos causados por configuracion incorrecta o uso indebido;
+- que cualquier resultado comercial especifico sera alcanzado por el cliente.
+
+16. LIMITACION DE RESPONSABILIDAD
+
+En la maxima medida permitida por la ley, MangoPOS no sera responsable por daños indirectos, incidentales, especiales, ejemplares, punitivos o consecuenciales, ni por perdida de ingresos, utilidades, datos, reputacion o continuidad comercial derivada del uso o imposibilidad de uso del servicio.
+
+Cuando la ley permita limitar responsabilidad, la responsabilidad total acumulada de MangoPOS frente al cliente por reclamaciones relacionadas con estos Terminos o el servicio no excedera el monto efectivamente pagado por el cliente a MangoPOS durante los [ULTIMOS 3 / 6 / 12] meses anteriores al hecho que origine la reclamacion.
+
+Nada de lo anterior limitara responsabilidades que no puedan excluirse legalmente.
+
+17. INDEMNIZACION
+
+El cliente acepta defender, indemnizar y mantener indemne a MangoPOS, sus afiliadas, directores, ejecutivos, empleados y proveedores frente a reclamaciones, daños, costos y gastos derivados de:
+
+- uso indebido del servicio;
+- incumplimiento de estos Terminos;
+- violacion de derechos de terceros;
+- informacion, configuracion o contenido cargado por el cliente;
+- incumplimiento legal del negocio cliente en su operacion comercial, laboral, fiscal o de consumo.
+
+18. LEY APLICABLE Y JURISDICCION
+
+Salvo que un contrato especifico disponga otra cosa, estos Terminos se regiran por las leyes de la Republica Dominicana.
+
+Toda controversia sera conocida por los tribunales competentes de [SANTO DOMINGO, REPUBLICA DOMINICANA], salvo que MangoPOS opte por un mecanismo alterno de solucion de disputas validamente acordado por escrito.
+
+19. CAMBIOS A ESTOS TERMINOS
+
+MangoPOS puede actualizar estos Terminos para reflejar cambios en el servicio, el negocio o la normativa aplicable.
+
+La version vigente sera publicada con su fecha de actualizacion. El uso continuado de MangoPOS luego de la entrada en vigor de una nueva version implicara aceptacion de los Terminos actualizados, salvo que la ley o un contrato requieran un procedimiento distinto.
+
+20. CONTACTO
+
+Para consultas legales o contractuales, contactenos en:
+
+MangoPOS
+Atencion: Area Legal / Comercial
+Correo: [CORREO_LEGAL_O_COMERCIAL]
+Telefono: [TELEFONO_DE_CONTACTO]
+Direccion: [DIRECCION_FISCAL_O_COMERCIAL]
+
+21. NOTA FINAL
+
+Antes de publicar este documento recomendamos validar:
+
+- nombre legal exacto de la entidad;
+- politica comercial y de facturacion real;
+- tratamiento de implementacion, soporte y cancelaciones;
+- limitacion de responsabilidad adecuada al modelo de negocio;
+- jurisdiccion, foro y mecanismos de resolucion de disputas;
+- obligaciones frente a clientes finales, pagos, fiscalidad y proteccion al consumidor.

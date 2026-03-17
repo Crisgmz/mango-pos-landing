@@ -18,10 +18,10 @@ export default function FiscalSection() {
           <div>
             <span className="text-xs font-body font-medium text-success uppercase tracking-wider">Fiscal y cumplimiento</span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-foreground leading-tight">
-              Configuración fiscal pensada para operar en RD
+              Configuración fiscal pensada para operar con orden
             </h2>
             <p className="mt-4 text-muted-foreground font-body leading-relaxed max-w-md">
-              Organiza NCF, estructura impositiva y datos fiscales del negocio desde un mismo entorno para trabajar con más claridad y menos fricción operativa.
+              Organiza comprobantes, estructura impositiva y datos fiscales del negocio desde un mismo entorno para trabajar con más claridad y menos fricción operativa.
             </p>
             <ul className="mt-6 space-y-3">
               {checks.map((c) => (

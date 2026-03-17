@@ -1,0 +1,232 @@
+MANGOPOS
+POLITICA DE PRIVACIDAD
+
+Borrador inicial para revision interna
+Basado en la estructura general observada en documentos publicos de Toast, pero redactado y adaptado para MangoPOS.
+Este texto debe ser revisado por asesoria legal antes de publicarse.
+
+Fecha de entrada en vigor: [POR DEFINIR]
+Ultima actualizacion: [POR DEFINIR]
+
+1. INTRODUCCION
+
+En MangoPOS respetamos la privacidad de nuestros usuarios, clientes comerciales, empleados de nuestros clientes, visitantes del sitio web y demas personas cuyos datos tratamos en relacion con nuestros servicios.
+
+Esta Politica de Privacidad explica como MangoPOS, sus afiliadas y proveedores autorizados recopilan, usan, almacenan, comparten y protegen informacion personal cuando una persona:
+
+- visita nuestro sitio web;
+- solicita informacion comercial;
+- contrata o usa MangoPOS;
+- interactua con nuestro sistema POS, modulos administrativos o herramientas relacionadas;
+- recibe soporte, implementacion o capacitacion;
+- realiza pedidos, pagos o interacciones a traves de negocios que operan con MangoPOS.
+
+Cuando usamos el termino "MangoPOS", "nosotros", "nuestro" o "la Plataforma", nos referimos a [NOMBRE LEGAL COMPLETO DE LA EMPRESA].
+
+2. ALCANCE
+
+Esta Politica aplica, segun corresponda, a las siguientes categorias de personas:
+
+- Clientes comerciales: negocios que contratan MangoPOS o solicitan una demostracion.
+- Usuarios operativos: empleados, administradores, cajeros, supervisores, encargados de cocina y demas personas autorizadas por un cliente comercial para usar el sistema.
+- Clientes finales o consumidores: personas que interactuan con un negocio que usa MangoPOS, por ejemplo al hacer un pedido, recibir una factura, acumular puntos o usar servicios habilitados por el comercio.
+- Visitantes del sitio web: personas que visitan mangopos.do, landing pages, formularios o paginas de ayuda.
+- Contactos comerciales y aliados: prospectos, socios, referidores, integradores o proveedores.
+
+Los negocios que usan MangoPOS son entidades independientes y pueden tener sus propias politicas de privacidad. En determinados casos, MangoPOS actua como proveedor de tecnologia y el negocio cliente sigue siendo responsable principal frente a sus propios consumidores y empleados.
+
+3. INFORMACION QUE PODEMOS RECOPILAR
+
+Podemos recopilar las siguientes categorias de informacion, segun el tipo de relacion con MangoPOS:
+
+3.1 Informacion proporcionada directamente
+
+- Nombre y apellidos
+- Nombre comercial y razon social
+- Correo electronico
+- Numero de telefono
+- Direccion fiscal o comercial
+- RNC o informacion tributaria del negocio
+- Cargo o rol dentro del negocio
+- Credenciales de acceso
+- Datos de facturacion y cobro
+- Datos entregados en formularios, reuniones, soporte o implementacion
+
+3.2 Informacion operativa del negocio
+
+- Sucursales, cajas, zonas y mesas
+- Catalogo de productos, menus, combos y modificadores
+- Usuarios, roles, permisos y actividad operativa
+- Ventas, devoluciones, pagos, cierres y movimientos de caja
+- Datos de cocina, comandas, tiempos y estados de orden
+- Configuracion fiscal, comprobantes, series NCF o datos equivalentes
+- Reportes, inventario, kardex, metas y modulos activados
+
+3.3 Informacion de clientes finales procesada a traves de los negocios usuarios
+
+Segun las funciones activadas por cada comercio, MangoPOS puede procesar datos como:
+
+- nombre del cliente;
+- telefono o correo;
+- historial de pedidos o compras;
+- informacion de fidelizacion;
+- informacion relacionada con ventas a credito;
+- datos de facturacion necesarios para emitir comprobantes.
+
+MangoPOS procesa estos datos para habilitar el servicio contratado por el comercio.
+
+3.4 Informacion recopilada automaticamente
+
+- Direccion IP
+- Tipo de navegador y dispositivo
+- Sistema operativo
+- Identificadores de sesion
+- Paginas visitadas
+- Fechas y horas de acceso
+- Cookies y tecnologias similares
+- Registros tecnicos, eventos de seguridad y telemetria de uso
+
+3.5 Informacion obtenida de terceros
+
+Podemos recibir informacion de:
+
+- proveedores de pagos;
+- integradores o servicios conectados;
+- herramientas de analitica;
+- proveedores de infraestructura y soporte;
+- referidores o socios comerciales;
+- fuentes publicas o validaciones regulatorias cuando sea necesario para cumplimiento.
+
+4. COMO USAMOS LA INFORMACION
+
+Usamos la informacion personal y operativa para:
+
+- prestar, mantener y mejorar MangoPOS;
+- configurar cuentas, sucursales, usuarios, permisos y modulos;
+- procesar ventas, pagos, reportes y funciones del sistema;
+- habilitar funcionalidades de caja, cocina, inventario, fiscal, fidelizacion, credito y multi-sucursal;
+- brindar implementacion, soporte, capacitacion y seguimiento comercial;
+- responder consultas, solicitudes y tickets;
+- enviar comunicaciones operativas, tecnicas, administrativas o comerciales, cuando la ley lo permita;
+- prevenir fraude, abuso, accesos no autorizados o incidentes de seguridad;
+- cumplir obligaciones legales, fiscales, regulatorias y contractuales;
+- realizar analisis internos, estadisticas, auditorias y mejoras del servicio.
+
+No usaremos informacion personal para fines incompatibles con los descritos en esta Politica, salvo cuando exista una base legal valida o consentimiento aplicable.
+
+5. BASES PARA EL TRATAMIENTO
+
+Dependiendo del caso y de la ley aplicable, tratamos informacion sobre una o varias de estas bases:
+
+- ejecucion de un contrato o de medidas precontractuales;
+- cumplimiento de obligaciones legales;
+- interes legitimo de MangoPOS para operar, asegurar y mejorar el servicio;
+- consentimiento del titular cuando corresponda;
+- proteccion frente a fraude, abuso o riesgos de seguridad.
+
+6. COMO COMPARTIMOS LA INFORMACION
+
+Podemos compartir informacion con:
+
+- empresas afiliadas o relacionadas con MangoPOS;
+- proveedores de infraestructura, hosting, almacenamiento, soporte, analitica, mensajeria, correo, seguridad y procesamiento;
+- pasarelas de pago, servicios fiscales o integraciones activadas por el cliente;
+- asesores legales, contables o auditores;
+- autoridades administrativas, regulatorias o judiciales cuando exista obligacion legal o requerimiento valido;
+- potenciales compradores, inversionistas o sucesores corporativos en una reorganizacion, fusion o venta de activos, con las salvaguardas correspondientes.
+
+No vendemos informacion personal en el sentido tradicional de comercializar bases de datos personales como producto.
+
+7. COOKIES Y TECNOLOGIAS SIMILARES
+
+MangoPOS puede usar cookies, pixels, almacenamiento local y tecnologias similares para:
+
+- mantener sesiones activas;
+- recordar preferencias;
+- medir trafico y rendimiento;
+- detectar errores o incidentes;
+- analizar el uso del sitio y del producto;
+- mejorar navegacion, seguridad y experiencia de usuario.
+
+El usuario puede gestionar parte de estas tecnologias desde su navegador o dispositivo. Algunas funcionalidades pueden verse afectadas si se desactivan cookies necesarias.
+
+8. RETENCION DE LA INFORMACION
+
+Conservamos la informacion durante el tiempo necesario para:
+
+- prestar los servicios contratados;
+- mantener continuidad operativa;
+- cumplir obligaciones fiscales, contables, regulatorias o contractuales;
+- resolver disputas, auditorias o reclamaciones;
+- proteger nuestros derechos y prevenir fraude.
+
+Los periodos exactos de conservacion pueden variar segun el tipo de informacion, el modulo utilizado y la relacion vigente con MangoPOS.
+
+9. DERECHOS Y OPCIONES DEL TITULAR
+
+Segun la ley aplicable, una persona puede tener derecho a:
+
+- acceder a sus datos personales;
+- corregir informacion inexacta o desactualizada;
+- solicitar eliminacion cuando proceda;
+- oponerse a ciertos tratamientos;
+- retirar consentimiento cuando esa sea la base legal;
+- solicitar limitacion del tratamiento;
+- pedir copia de cierta informacion, cuando aplique;
+- gestionar preferencias de comunicaciones comerciales.
+
+Cuando MangoPOS trate datos por cuenta de un negocio cliente, algunas solicitudes podran canalizarse directamente a traves de ese negocio.
+
+10. SEGURIDAD
+
+MangoPOS aplica medidas tecnicas, administrativas y organizativas razonables para proteger la informacion contra acceso no autorizado, alteracion, perdida, destruccion o divulgacion indebida.
+
+Estas medidas pueden incluir controles de acceso, autenticacion, segmentacion de permisos, monitoreo, registros de actividad, respaldo, cifrado cuando corresponda y politicas internas de seguridad.
+
+Sin embargo, ningun sistema es completamente infalible. Por eso, aunque hacemos esfuerzos razonables para proteger la informacion, no podemos garantizar seguridad absoluta.
+
+11. DATOS DE MENORES
+
+MangoPOS no esta dirigido a menores de edad y no busca recopilar deliberadamente informacion personal de menores, salvo que una ley aplicable lo permita y exista una base valida para ello.
+
+Si una persona responsable entiende que un menor ha proporcionado informacion personal sin autorizacion, puede contactarnos para revisar y, cuando proceda, eliminar dicha informacion.
+
+12. SERVICIOS DE TERCEROS
+
+La Plataforma puede integrarse con servicios de terceros o contener enlaces a sitios externos. MangoPOS no controla las practicas de privacidad de esos terceros fuera de nuestra plataforma.
+
+Recomendamos revisar las politicas de privacidad y terminos de cualquier servicio externo utilizado junto con MangoPOS.
+
+13. TRANSFERENCIAS INTERNACIONALES
+
+Si MangoPOS utiliza proveedores o infraestructura ubicados fuera del pais del usuario o del cliente comercial, la informacion puede ser transferida o alojada en otras jurisdicciones.
+
+En esos casos procuraremos implementar medidas contractuales y operativas razonables para proteger la informacion conforme a la ley aplicable.
+
+14. CAMBIOS A ESTA POLITICA
+
+Podemos actualizar esta Politica de Privacidad cuando cambien nuestros servicios, nuestras practicas o la normativa aplicable.
+
+La version mas reciente se publicara con su fecha de actualizacion. Cuando corresponda, tambien podremos comunicar cambios por correo, dentro del producto o por otros medios razonables.
+
+15. CONTACTO
+
+Para consultas sobre privacidad, derechos de datos o esta Politica, contactanos en:
+
+MangoPOS
+Atencion: Responsable de Privacidad
+Correo: [CORREO_DE_PRIVACIDAD]
+Telefono: [TELEFONO_DE_CONTACTO]
+Direccion: [DIRECCION_FISCAL_O_COMERCIAL]
+
+16. NOTA FINAL
+
+Este documento es un borrador operativo para MangoPOS. Antes de publicarlo recomendamos revisar:
+
+- nombre legal correcto de la empresa;
+- jurisdiccion aplicable;
+- correo y direccion oficiales;
+- uso real de cookies y analitica;
+- flujo real de pagos, fidelizacion y ventas a credito;
+- roles entre MangoPOS y los comercios clientes;
+- obligaciones regulatorias locales, incluyendo privacidad, consumidor y normativa tributaria.

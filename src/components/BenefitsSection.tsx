@@ -6,7 +6,7 @@ const benefits = [
   { num: "3", label: "Flexibilidad", title: "Se adapta al tipo de servicio", desc: "Úsalo en salón, mostrador, cafetería, bar o formatos de comida rápida.", featured: false },
   { num: "4", label: "Equipo", title: "Trabaja con roles y permisos", desc: "Define accesos según el puesto y mantén más orden en caja y operación.", featured: false },
   { num: "5", label: "Escalabilidad", title: "Crece sin cambiar de sistema", desc: "Empieza con una operación sencilla y suma más control a medida que tu negocio evoluciona.", featured: false },
-  { num: "6", label: "Fiscal", title: "Prepara tu operación para RD", desc: "Maneja impuestos y configuración fiscal desde una estructura pensada para República Dominicana.", featured: false },
+  { num: "6", label: "Fiscal", title: "Configura tu operación fiscal", desc: "Maneja impuestos y configuraciones fiscales desde una estructura adaptable según tu operación.", featured: false },
 ];
 
 export default function BenefitsSection() {
