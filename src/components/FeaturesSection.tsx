@@ -11,7 +11,7 @@ export default function FeaturesSection() {
     <section id="caracteristicas" className="py-20 md:py-28 bg-secondary/35" ref={ref}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Características</span>
+          <span className="text-xs font-body font-medium text-success uppercase tracking-wider">Características</span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-foreground leading-tight">
             Una vista clara de cómo se organiza MangoPOS
           </h2>

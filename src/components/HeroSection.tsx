@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import heroPreview from "../../assets/FireShot Capture 023 - MangoPOS - [sistematest.mangopos.do].png";
+import heroVideo from "../../assets/4524440-uhd_3840_2160_25fps.mov";
 import mangoLogo from "../../assets/favicon/windows_icon.png";
 import { primaryLinks } from "@/content/site";
 
@@ -29,11 +29,14 @@ export default function HeroSection() {
   return (
     <section className="relative isolate overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24">
       <div className="pointer-events-none absolute inset-0 z-0">
-        <img
-          alt="Vista previa de Mango POS"
-          className="h-full w-full object-cover object-top"
-          loading="eager"
-          src={heroPreview}
+        <video
+          autoPlay
+          className="h-full w-full object-cover"
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          src={heroVideo}
         />
       </div>
 
@@ -43,7 +46,7 @@ export default function HeroSection() {
       <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className={`space-y-6 ${visible ? "animate-fade-up" : "opacity-0"}`}>
-            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-body font-medium">
+            <span className="inline-block px-3 py-1 rounded-full bg-success/10 text-success text-xs font-body font-medium">
               Sistema POS para restaurantes en RD
             </span>
 
@@ -80,7 +83,7 @@ export default function HeroSection() {
             </div>
             <div className="absolute -bottom-2 -left-2 sm:left-4 z-10 animate-float-down">
               <div className="bg-background border border-border rounded-full px-3 py-1.5 shadow-sm flex items-center gap-2 text-xs font-body">
-                <span className="w-2 h-2 rounded-full bg-primary" />
+                <span className="w-2 h-2 rounded-full bg-success" />
                 Control fiscal configurable
               </div>
             </div>
@@ -99,9 +102,9 @@ export default function HeroSection() {
 
               <div className="p-5 space-y-4">
                 <div className="grid grid-cols-3 gap-3">
-                  <div className="bg-primary/5 rounded-md px-3 py-2">
+                  <div className="bg-success/5 rounded-md px-3 py-2">
                     <p className="text-[10px] text-muted-foreground font-body">Ventas hoy</p>
-                    <p className="text-sm font-heading font-bold text-primary">RD$38,500</p>
+                    <p className="text-sm font-heading font-bold text-success">RD$38,500</p>
                   </div>
                   <div className="bg-secondary rounded-md px-3 py-2">
                     <p className="text-[10px] text-muted-foreground font-body">Órdenes</p>

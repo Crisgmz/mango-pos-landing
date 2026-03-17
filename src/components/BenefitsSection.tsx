@@ -16,7 +16,7 @@ export default function BenefitsSection() {
     <section id="beneficios" className="py-20 md:py-28 bg-secondary" ref={ref}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Por qué Mango</span>
+          <span className="text-xs font-body font-medium text-success uppercase tracking-wider">Por qué Mango</span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-foreground">
             Diseñado para restaurantes dominicanos
           </h2>

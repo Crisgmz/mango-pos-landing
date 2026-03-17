@@ -5,6 +5,8 @@ export const primaryLinks = {
   features: "/caracteristicas",
   pricing: "/precios",
   pricingFaq: "/precios#faq",
+  privacy: "/privacidad",
+  terms: "/terminos",
   finalCta: "/#contacto",
   app: appUrl,
 };

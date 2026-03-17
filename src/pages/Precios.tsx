@@ -10,7 +10,7 @@ const Precios = () => {
         <section className="pt-14 pb-4 bg-background">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Precios de MangoPOS</span>
+              <span className="text-xs font-body font-medium text-success uppercase tracking-wider">Precios de MangoPOS</span>
               <h1 className="mt-3 text-4xl sm:text-5xl font-heading font-bold text-foreground leading-tight">
                 Planes pensados para operar hoy y escalar mañana
               </h1>

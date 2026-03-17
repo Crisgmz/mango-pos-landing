@@ -13,7 +13,7 @@ export default function Caracteristicas() {
         <section className="py-14 md:py-18 bg-secondary/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl">
-              <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Características de MangoPOS</span>
+              <span className="text-xs font-body font-medium text-success uppercase tracking-wider">Características de MangoPOS</span>
               <h1 className="mt-3 text-4xl sm:text-5xl font-heading font-bold text-foreground leading-tight">
                 Todos los módulos que puedes activar para operar, controlar y escalar
               </h1>

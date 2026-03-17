@@ -16,7 +16,7 @@ export default function FiscalSection() {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left */}
           <div>
-            <span className="text-xs font-body font-medium text-primary uppercase tracking-wider">Fiscal y cumplimiento</span>
+            <span className="text-xs font-body font-medium text-success uppercase tracking-wider">Fiscal y cumplimiento</span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-foreground leading-tight">
               Configuración fiscal pensada para operar en RD
             </h2>
