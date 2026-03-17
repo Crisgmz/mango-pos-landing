@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import mangoLogo from "../../Artboard 1logo.png";
+import mangoLogo from "../../assets/favicon/windows_icon.png";
 import { footerSections } from "@/content/site";
 
 export default function Footer() {

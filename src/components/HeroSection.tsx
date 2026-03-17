@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroPreview from "../../assets/FireShot Capture 023 - MangoPOS - [sistematest.mangopos.do].png";
-import mangoLogo from "../../Artboard 1logo.png";
+import mangoLogo from "../../assets/favicon/windows_icon.png";
 import { primaryLinks } from "@/content/site";
 
 const mesas = [

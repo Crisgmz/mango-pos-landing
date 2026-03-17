@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
-import mangoLogo from "../../Artboard 1logo.png";
+import mangoLogo from "../../assets/favicon/windows_icon.png";
 import { featureGroups } from "@/content/features";
 import { appUrl, helpLinks, primaryLinks } from "@/content/site";
 
