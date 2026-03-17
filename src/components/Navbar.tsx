@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
-import mangoLogo from "../../assets/favicon/windows_icon.png";
+import mangoLogo from "../../assets/Artboardlogo.png";
 import { featureGroups } from "@/content/features";
 import { appUrl, helpLinks, primaryLinks } from "@/content/site";
 
@@ -102,7 +102,7 @@ export default function Navbar() {
           >
             <img
               alt="Mango POS"
-              className="h-10 w-auto object-contain sm:h-11"
+              className="h-11 w-auto object-contain sm:h-12"
               src={mangoLogo}
             />
           </a>
@@ -117,7 +117,7 @@ export default function Navbar() {
                 <button
                   onClick={() => scrollTo(link.isRoute ? link.href : link.href)}
                   className={`px-3 py-2 text-sm font-body transition-colors flex items-center gap-1 ${
-                    activeDropdown === link.label ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                    activeDropdown === link.label ? "text-foreground" : "text-muted-foreground hover:text-primary"
                   }`}
                 >
                   {link.label}
@@ -251,7 +251,7 @@ export default function Navbar() {
             <button
               key={link.label}
               onClick={() => scrollTo(link.isRoute ? link.href : link.href)}
-              className="block w-full text-left px-3 py-3 text-sm font-body text-foreground hover:bg-secondary rounded-md"
+              className="block w-full text-left px-3 py-3 text-sm font-body text-foreground hover:bg-secondary hover:text-primary rounded-md"
             >
               {link.label}
             </button>

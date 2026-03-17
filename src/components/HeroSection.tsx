@@ -2,32 +2,15 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroVideo from "../../assets/4524440-uhd_3840_2160_25fps.mov";
-import mangoLogo from "../../assets/favicon/windows_icon.png";
+import heroDashboard from "../../assets/Imagenes/DASHBOARD.png";
 import { primaryLinks } from "@/content/site";
-
-const mesas = [
-  { name: "Mesa 1", status: "Ocupada" },
-  { name: "Mesa 2", status: "Libre" },
-  { name: "Mesa 3", status: "Ocupada" },
-  { name: "Mesa 4", status: "Pagando" },
-  { name: "Mesa 5", status: "Libre" },
-  { name: "Mesa 6", status: "Ocupada" },
-  { name: "Mesa 7", status: "Libre" },
-  { name: "Mesa 8", status: "Libre" },
-];
-
-const statusColor: Record<string, string> = {
-  Ocupada: "bg-primary/10 text-primary border-primary/20",
-  Libre: "bg-secondary text-muted-foreground border-border",
-  Pagando: "bg-success/10 text-success border-success/20",
-};
 
 export default function HeroSection() {
   const [visible, setVisible] = useState(false);
   useEffect(() => setVisible(true), []);
 
   return (
-    <section className="relative isolate overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24">
+    <section className="relative isolate overflow-hidden pt-24 pb-0 md:pt-28 md:pb-0">
       <div className="pointer-events-none absolute inset-0 z-0">
         <video
           autoPlay
@@ -43,27 +26,37 @@ export default function HeroSection() {
       <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(90deg,hsl(var(--background)/0.96)_0%,hsl(var(--background)/0.84)_36%,hsl(var(--background)/0.46)_70%,hsl(var(--background)/0.26)_100%)]" />
       <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_top_left,hsl(var(--background)/0.97)_0%,transparent_58%)]" />
 
-      <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className={`space-y-6 ${visible ? "animate-fade-up" : "opacity-0"}`}>
+      <div className="relative z-20 max-w-[1500px] mx-auto pl-8 pr-0 sm:pl-10 sm:pr-0 lg:pl-16 lg:pr-0">
+        <div className="grid md:grid-cols-[0.7fr_1.3fr] gap-2 lg:gap-4 items-stretch">
+          <div className={`space-y-5 max-w-[500px] pt-6 md:pt-12 lg:pl-4 ${visible ? "animate-fade-up" : "opacity-0"}`}>
             <span className="inline-block px-3 py-1 rounded-full bg-success/10 text-success text-xs font-body font-medium">
-              Sistema POS para restaurantes en RD
+              Sistema POS para restaurantes y negocios de comida
             </span>
 
-            <h1 className="text-4xl sm:text-5xl font-heading font-bold leading-[1.1] text-foreground tracking-tight">
-              El sistema POS para restaurantes que te ayuda a vender, cobrar y operar con más orden
+            <h1 className="max-w-[14ch] text-[2.65rem] sm:text-[3rem] lg:text-[3.2rem] font-heading font-bold leading-[1] text-foreground tracking-tight text-left">
+              El <span className="text-success">sistema POS</span> para restaurantes
             </h1>
 
-            <p className="text-base text-muted-foreground max-w-lg leading-relaxed">
-              Mango POS centraliza mesas, comandas, cocina, caja, productos, reportes y configuración fiscal en una plataforma pensada para operaciones reales en República Dominicana.
+            <p className="text-base sm:text-lg text-muted-foreground max-w-md leading-relaxed">
+              Vende más rápido, cobra mejor y controla tu operación desde una sola plataforma pensada para restaurantes y negocios de comida que quieren crecer con más orden.
             </p>
 
-            <div className="grid gap-2 text-sm font-body text-muted-foreground sm:grid-cols-2 max-w-xl">
-              <div className="rounded-lg border border-border bg-background/70 px-3 py-2">Flujo de venta ágil para salón, mostrador y cocina</div>
-              <div className="rounded-lg border border-border bg-background/70 px-3 py-2">Control operativo y estructura fiscal desde un solo sistema</div>
+            <div className="space-y-2.5 text-[15px] sm:text-base font-body text-muted-foreground">
+              <div className="flex items-start gap-3">
+                <span className="mt-1 text-success">✓</span>
+                <span>Flujo de venta ágil para salón, mostrador y cocina.</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="mt-1 text-success">✓</span>
+                <span>Control operativo y estructura fiscal desde un solo sistema.</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="mt-1 text-success">✓</span>
+                <span>Diseñado para operaciones reales y crecimiento ordenado.</span>
+              </div>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 pt-1">
               <Button asChild size="lg">
                 <Link to={primaryLinks.pricing}>14 Días Gratis</Link>
               </Button>
@@ -71,59 +64,17 @@ export default function HeroSection() {
                 <Link to={primaryLinks.features}>Explorar funciones</Link>
               </Button>
             </div>
-
           </div>
 
-          <div className={`relative ${visible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: "0.15s" }}>
-            <div className="absolute -top-2 -right-2 sm:right-4 z-10 animate-float-up">
-              <div className="bg-background border border-border rounded-full px-3 py-1.5 shadow-sm flex items-center gap-2 text-xs font-body">
-                <span className="w-2 h-2 rounded-full bg-success" />
-                Orden enviada a cocina
-              </div>
-            </div>
-            <div className="absolute -bottom-2 -left-2 sm:left-4 z-10 animate-float-down">
-              <div className="bg-background border border-border rounded-full px-3 py-1.5 shadow-sm flex items-center gap-2 text-xs font-body">
-                <span className="w-2 h-2 rounded-full bg-success" />
-                Control fiscal configurable
-              </div>
-            </div>
-
-            <div className="bg-background rounded-xl border border-border shadow-sm overflow-hidden">
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-border">
-                <span className="w-2.5 h-2.5 rounded-full bg-destructive/40" />
-                <span className="w-2.5 h-2.5 rounded-full bg-primary/40" />
-                <span className="w-2.5 h-2.5 rounded-full bg-success/40" />
+          <div className={`relative min-h-[540px] md:min-h-[660px] ${visible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: "0.15s" }}>
+            <div className="absolute inset-0 top-[2.2rem] md:top-[4.1rem] md:left-32 lg:left-40 xl:left-44 md:-right-32 lg:-right-44 xl:-right-56 md:-bottom-32">
+              <div className="relative h-full w-full overflow-hidden rounded-[8px] border border-white/70 bg-white shadow-[0_40px_100px_-35px_rgba(15,23,42,0.45)]">
                 <img
-                  alt="Mango POS"
-                  className="ml-2 h-8 w-auto object-contain"
-                  src={mangoLogo}
+                  alt="Dashboard de Mango POS"
+                  className="h-full w-full object-cover object-left-top"
+                  src={heroDashboard}
                 />
-              </div>
-
-              <div className="p-5 space-y-4">
-                <div className="grid grid-cols-3 gap-3">
-                  <div className="bg-success/5 rounded-md px-3 py-2">
-                    <p className="text-[10px] text-muted-foreground font-body">Ventas hoy</p>
-                    <p className="text-sm font-heading font-bold text-success">RD$38,500</p>
-                  </div>
-                  <div className="bg-secondary rounded-md px-3 py-2">
-                    <p className="text-[10px] text-muted-foreground font-body">Órdenes</p>
-                    <p className="text-sm font-heading font-bold text-foreground">47</p>
-                  </div>
-                  <div className="bg-success/5 rounded-md px-3 py-2">
-                    <p className="text-[10px] text-muted-foreground font-body">Mesas activas</p>
-                    <p className="text-sm font-heading font-bold text-success">6/12</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-4 gap-2">
-                  {mesas.map((mesa) => (
-                    <div key={mesa.name} className={`rounded-md border px-2 py-2 text-center ${statusColor[mesa.status]}`}>
-                      <p className="text-[10px] font-heading font-semibold">{mesa.name}</p>
-                      <p className="text-[9px] font-body">{mesa.status}</p>
-                    </div>
-                  ))}
-                </div>
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-b from-transparent via-background/18 to-background" />
               </div>
             </div>
           </div>
