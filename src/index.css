@@ -59,6 +59,42 @@
     transform: translateY(-3px);
     box-shadow: 0 8px 25px -8px hsl(var(--foreground) / 0.1);
   }
+
+  .legal-content {
+    @apply text-base leading-7 text-muted-foreground;
+  }
+
+  .legal-content section + section {
+    @apply mt-10 border-t border-border/70 pt-10;
+  }
+
+  .legal-content h2 {
+    @apply text-2xl font-bold text-foreground tracking-tight;
+  }
+
+  .legal-content h3 {
+    @apply mt-6 text-lg font-semibold text-foreground;
+  }
+
+  .legal-content p {
+    @apply mt-4;
+  }
+
+  .legal-content ul {
+    @apply mt-4 space-y-3 pl-5;
+  }
+
+  .legal-content li {
+    @apply pl-1;
+  }
+
+  .legal-content li::marker {
+    color: hsl(var(--success));
+  }
+
+  .legal-note {
+    @apply mb-8 rounded-2xl border border-success/20 bg-success/10 px-5 py-4 text-sm leading-6 text-foreground;
+  }
 }
 
 @keyframes float-up {

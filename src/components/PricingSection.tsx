@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import SectionLabel from "@/components/SectionLabel";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { comparisonSections, faqItems, plans } from "@/content/pricing";
 import { appUrl } from "@/content/site";
@@ -29,12 +30,18 @@ export default function PricingSection({ mode = "summary" }: PricingSectionProps
   return (
     <section id="precios" className="py-20 md:py-28 bg-background" ref={ref}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <span className="text-xs font-body font-medium text-success uppercase tracking-wider">Planes y precios</span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-foreground">
-            {isFull ? "Planes para crecer al ritmo de tu operación" : "Planes claros para comenzar y escalar"}
+        <div className="text-center mb-14 space-y-3">
+          <SectionLabel label="Planes y precios" variant={1} />
+          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground">
+            {isFull ? (
+              "Planes para crecer al ritmo de tu operación"
+            ) : (
+              <>
+                Planes claros para <span className="text-[#22c55e]">comenzar</span> y <span className="text-[#f97316]">escalar</span>
+              </>
+            )}
           </h2>
-          <p className="mt-3 text-sm font-body text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm font-body text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {isFull
               ? "Cada plan responde a un nivel distinto de operación. Aquí puedes comparar alcance, soporte y capacidad de crecimiento para elegir la opción que mejor encaje con tu negocio."
               : "Compara de forma rápida el enfoque de cada plan y revisa luego el detalle completo de alcance, soporte y escalabilidad en la página de precios."}
@@ -45,9 +52,9 @@ export default function PricingSection({ mode = "summary" }: PricingSectionProps
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`rounded-xl p-6 flex flex-col border ${
+              className={`rounded-xl p-6 flex flex-col border transition transform duration-200 hover:-translate-y-1 hover:shadow-xl ${
                 plan.popular
-                  ? "border-success bg-success text-success-foreground shadow-lg shadow-success/15"
+                  ? "border-success bg-success text-white shadow-lg shadow-success/15"
                   : "border-border bg-background text-foreground"
               }`}
             >
@@ -57,35 +64,49 @@ export default function PricingSection({ mode = "summary" }: PricingSectionProps
                 </span>
               )}
 
-              <h3 className="font-heading font-bold text-lg">{plan.name}</h3>
-              <p className={`mt-2 text-sm leading-relaxed ${plan.popular ? "text-success-foreground/80" : "text-muted-foreground"}`}>
+              <h3 className={`font-heading font-bold text-lg ${plan.popular ? "text-white" : ""}`}>{plan.name}</h3>
+              <p className={`mt-2 text-sm leading-relaxed ${plan.popular ? "text-white" : "text-muted-foreground"}`}>
                 {plan.audience}
               </p>
 
               <div className="mt-5 flex items-end gap-1">
                 <span className="text-3xl font-heading font-bold">{plan.priceLabel}</span>
                 {plan.priceSuffix && (
-                  <span className={`pb-1 text-sm font-body ${plan.popular ? "text-success-foreground/75" : "text-muted-foreground"}`}>
+                  <span className={`pb-1 text-sm font-body ${plan.popular ? "text-white" : "text-muted-foreground"}`}>
                     {plan.priceSuffix}
                   </span>
                 )}
               </div>
 
-              <p className={`text-xs font-body mt-1 ${plan.popular ? "text-success-foreground/70" : "text-muted-foreground"}`}>
+              <p className={`text-xs font-body mt-1 ${plan.popular ? "text-white" : "text-muted-foreground"}`}>
                 {plan.priceNote}
               </p>
 
-              <p className={`text-sm font-body mt-4 leading-relaxed ${plan.popular ? "text-success-foreground/80" : "text-muted-foreground"}`}>
+              <p className={`text-sm font-body mt-4 leading-relaxed ${plan.popular ? "text-white" : "text-muted-foreground"}`}>
                 {plan.copy}
               </p>
 
               <ul className="mt-5 space-y-2 flex-1">
-                {(isFull ? plan.details : plan.summary).map((feature) => (
-                  <li key={feature} className="text-sm font-body flex items-start gap-2">
-                    <span className={`mt-0.5 ${plan.popular ? "text-success-foreground" : "text-primary"}`}>✓</span>
-                    {feature}
-                  </li>
-                ))}
+                {(isFull ? plan.details : plan.summary).map((feature) => {
+                  const lowerFeature = feature.toLowerCase();
+                  const isTodoBase = lowerFeature.includes("todo") && lowerFeature.includes("base");
+                  const isTodoPro = lowerFeature.includes("todo") && lowerFeature.includes("pro");
+                  const featureFont = isTodoBase || isTodoPro ? "font-semibold" : "font-body";
+                  const featureColor = plan.popular
+                    ? "text-white"
+                    : isTodoBase || isTodoPro
+                      ? "text-foreground"
+                      : "text-muted-foreground";
+                  const checkColor = plan.popular ? "text-white" : "text-muted-foreground/70";
+                  return (
+                    <li key={feature} className="flex items-start gap-2">
+                      <span className={`mt-0.5 ${checkColor}`}>✓</span>
+                      <span className={`leading-relaxed text-sm ${featureColor} ${featureFont}`}>
+                        {feature}
+                      </span>
+                    </li>
+                  );
+                })}
               </ul>
 
               {isFull ? (

@@ -29,12 +29,14 @@ export default function HeroSection() {
       <div className="relative z-20 max-w-[1500px] mx-auto pl-8 pr-0 sm:pl-10 sm:pr-0 lg:pl-16 lg:pr-0">
         <div className="grid md:grid-cols-[0.7fr_1.3fr] gap-2 lg:gap-4 items-stretch">
           <div className={`space-y-5 max-w-[500px] pt-6 md:pt-12 lg:pl-4 ${visible ? "animate-fade-up" : "opacity-0"}`}>
-            <span className="inline-block px-3 py-1 rounded-full bg-success/10 text-success text-xs font-body font-medium">
-              Sistema POS para restaurantes y negocios de comida
-            </span>
 
-            <h1 className="max-w-[14ch] text-[2.65rem] sm:text-[3rem] lg:text-[3.2rem] font-heading font-bold leading-[1] text-foreground tracking-tight text-left">
-              El <span className="text-success">sistema POS</span> para restaurantes
+            <h1 className="max-w-[18ch] text-[2.65rem] sm:text-[3rem] lg:text-[3.2rem] font-heading font-bold leading-[1.1] tracking-tight text-left">
+              <span className="block text-foreground">El sistema</span>
+              <span className="block">
+                <span className="text-[#f97316]">Mango</span>
+                <span className="text-[#22c55e]">POS</span>
+              </span>
+              <span className="block text-foreground">para restaurantes</span>
             </h1>
 
             <p className="text-base sm:text-lg text-muted-foreground max-w-md leading-relaxed">
@@ -43,15 +45,15 @@ export default function HeroSection() {
 
             <div className="space-y-2.5 text-[15px] sm:text-base font-body text-muted-foreground">
               <div className="flex items-start gap-3">
-                <span className="mt-1 text-success">✓</span>
+                <span className="mt-1 text-muted-foreground/70">✓</span>
                 <span>Flujo de venta ágil para salón, mostrador y cocina.</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="mt-1 text-success">✓</span>
+                <span className="mt-1 text-muted-foreground/70">✓</span>
                 <span>Control operativo y estructura fiscal desde un solo sistema.</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="mt-1 text-success">✓</span>
+                <span className="mt-1 text-muted-foreground/70">✓</span>
                 <span>Diseñado para operaciones reales y crecimiento ordenado.</span>
               </div>
             </div>

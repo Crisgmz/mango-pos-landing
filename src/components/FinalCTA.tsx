@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import SectionLabel from "@/components/SectionLabel";
 import { appUrl, primaryLinks } from "@/content/site";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -7,14 +8,17 @@ export default function FinalCTA() {
   const ref = useScrollReveal();
 
   return (
-    <section id="contacto" className="py-20 md:py-28 bg-secondary" ref={ref}>
+    <section id="contacto" className="py-16 md:py-20 bg-secondary" ref={ref}>
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-body font-medium text-primary mb-6">
-          Implementación acompañada
-        </span>
+        <SectionLabel label="Implementación acompañada" variant={0} className="mb-6" />
 
         <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground leading-tight">
-          Lleva tu operación a una plataforma más ordenada, rápida y escalable
+          <span className="block whitespace-nowrap">
+            Lleva tu operación a una plataforma más
+          </span>
+          <span className="block">
+            <span className="text-[#22c55e]">ordenada</span>, rápida y <span className="text-[#f97316]">escalable</span>
+          </span>
         </h2>
 
         <p className="mt-4 text-muted-foreground font-body leading-relaxed max-w-lg mx-auto">

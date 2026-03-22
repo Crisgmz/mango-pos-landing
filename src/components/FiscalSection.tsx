@@ -1,4 +1,5 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import SectionLabel from "@/components/SectionLabel";
 
 const checks = [
   "Configuración de comprobantes fiscales",
@@ -11,22 +12,23 @@ export default function FiscalSection() {
   const ref = useScrollReveal();
 
   return (
-    <section id="fiscal" className="py-20 md:py-28" ref={ref}>
+    <section id="fiscal" className="py-16 md:py-20" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left */}
-          <div>
-            <span className="text-xs font-body font-medium text-success uppercase tracking-wider">Fiscal y cumplimiento</span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-foreground leading-tight">
-              Configuración fiscal pensada para operar con orden
-            </h2>
-            <p className="mt-4 text-muted-foreground font-body leading-relaxed max-w-md">
-              Organiza comprobantes, estructura impositiva y datos fiscales del negocio desde un mismo entorno para trabajar con más claridad y menos fricción operativa.
-            </p>
-            <ul className="mt-6 space-y-3">
+        <div className="text-center mb-10 space-y-4">
+          <SectionLabel label="Fiscal y cumplimiento" variant={0} className="mx-auto" />
+          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground">
+            Configuración <span className="text-[#f97316]">fiscal</span> pensada para operar con <span className="text-[#22c55e]">orden</span>
+          </h2>
+          <p className="text-muted-foreground font-body leading-relaxed max-w-3xl mx-auto">
+            Organiza comprobantes, estructura impositiva y datos fiscales del negocio desde un mismo entorno para trabajar con más claridad y menos fricción operativa.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <div className="flex justify-center">
+            <ul className="space-y-3 max-w-md">
               {checks.map((c) => (
                 <li key={c} className="flex items-start gap-3 text-sm font-body text-foreground">
-                  <span className="text-success mt-0.5">✓</span>
+                  <span className="text-muted-foreground/70 mt-0.5">✓</span>
                   {c}
                 </li>
               ))}
