@@ -9,7 +9,7 @@ export const legalMeta = {
   legalEmail: "legal@mangopos.do",
   supportEmail: "soporte@mangopos.do",
   phone: "+1 849-267-8985",
-  address: "Jardines Universitarios II, Edif. KL, APT L4, Villa Olímpica, Santiago, República Dominicana 51000",
+  address: "Jardines Universitarios II, Villa Olímpica, Santiago, República Dominicana 51000",
   country: "República Dominicana",
   currency: "Peso dominicano (DOP / RD$)",
   paymentProcessor: "AZUL",
