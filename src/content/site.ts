@@ -7,6 +7,7 @@ export const primaryLinks = {
   pricingFaq: "/precios#faq",
   privacy: "/privacidad",
   terms: "/terminos",
+  paymentPolicy: "/politicas-de-pago",
   finalCta: "/#contacto",
   app: appUrl,
 };
@@ -30,20 +31,19 @@ export const helpLinks = [
 ];
 
 export const footerSections = {
-  Producto: [
+  "Enlaces rápidos": [
+    { label: "Inicio", href: primaryLinks.home },
     { label: "Características", href: primaryLinks.features },
     { label: "Precios", href: primaryLinks.pricing },
     { label: "Preguntas frecuentes", href: primaryLinks.pricingFaq },
+    { label: "Contacto comercial", href: primaryLinks.finalCta },
     { label: "Acceder al sistema", href: primaryLinks.app, external: true },
   ],
-  Recursos: [
-    { label: "Preguntas frecuentes", href: primaryLinks.pricingFaq },
-    { label: "Implementación", href: primaryLinks.finalCta },
-    { label: "Planes para crecer", href: primaryLinks.pricing },
-  ],
-  Empresa: [
-    { label: "Inicio", href: primaryLinks.home },
-    { label: "Módulos del sistema", href: primaryLinks.features },
-    { label: "Contacto comercial", href: primaryLinks.finalCta },
+  "Nuestras Políticas": [
+    { label: "Términos y Condiciones", href: primaryLinks.terms },
+    { label: "Política de Privacidad", href: primaryLinks.privacy },
+    { label: "Políticas de Pago", href: primaryLinks.paymentPolicy },
+    { label: "Devoluciones, Reembolsos y Cancelaciones", href: `${primaryLinks.paymentPolicy}#devoluciones` },
+    { label: "Seguridad para Transmisión de Datos de Tarjetas", href: `${primaryLinks.paymentPolicy}#seguridad` },
   ],
 };

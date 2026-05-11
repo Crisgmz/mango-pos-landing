@@ -4,9 +4,15 @@ export const legalMeta = {
   privacyUpdatedAt: "16 de marzo de 2026",
   termsEffectiveDate: "15 de marzo de 2026",
   termsUpdatedAt: "16 de marzo de 2026",
+  paymentPolicyEffectiveDate: "11 de mayo de 2026",
+  paymentPolicyUpdatedAt: "11 de mayo de 2026",
   legalEmail: "legal@mangopos.do",
-  phone: "8492678985",
-  address: "Calle Duarte 66, Cepillo, Monción, Santiago Rodríguez, República Dominicana 51000",
+  supportEmail: "soporte@mangopos.do",
+  phone: "+1 849-267-8985",
+  address: "Jardines Universitarios II, Edif. KL, APT L4, Villa Olímpica, Santiago, República Dominicana 51000",
+  country: "República Dominicana",
+  currency: "Peso dominicano (DOP / RD$)",
+  paymentProcessor: "AZUL",
 };
 
 export const socialLinks = {
