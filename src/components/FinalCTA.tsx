@@ -13,7 +13,7 @@ export default function FinalCTA() {
         <SectionLabel label="Implementación acompañada" variant={0} className="mb-6" />
 
         <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground leading-tight">
-          <span className="block whitespace-nowrap">
+          <span className="block md:whitespace-nowrap">
             Lleva tu operación a una plataforma más
           </span>
           <span className="block">
